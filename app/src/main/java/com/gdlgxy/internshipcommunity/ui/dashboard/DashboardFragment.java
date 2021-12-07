@@ -14,7 +14,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.gdlgxy.internshipcommunity.R;
 import com.gdlgxy.internshipcommunity.databinding.FragmentDashboardBinding;
+import com.gdlgxy.navannotationmodule.FragmentDestination;
 
+@FragmentDestination(pageUrl = "main/tabs/home",asStarter = false)
 public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;

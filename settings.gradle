@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "InternshipExchangeCommunity"
 include ':app'
+include ':NavAnnotationModule'
+include ':NavCompilerModule'
