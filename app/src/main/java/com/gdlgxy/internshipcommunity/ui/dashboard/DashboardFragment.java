@@ -16,7 +16,7 @@ import com.gdlgxy.internshipcommunity.R;
 import com.gdlgxy.internshipcommunity.databinding.FragmentDashboardBinding;
 import com.gdlgxy.navannotationmodule.FragmentDestination;
 
-@FragmentDestination(pageUrl = "main/tabs/home",asStarter = false)
+@FragmentDestination(pageUrl = "main/tabs/dashboardfragment",asStarter = false)
 public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;

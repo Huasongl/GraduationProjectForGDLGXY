@@ -16,7 +16,7 @@ import com.gdlgxy.internshipcommunity.R;
 import com.gdlgxy.internshipcommunity.databinding.FragmentNotificationsBinding;
 import com.gdlgxy.navannotationmodule.FragmentDestination;
 
-@FragmentDestination(pageUrl = "main/tabs/home",asStarter = false)
+@FragmentDestination(pageUrl = "main/tabs/notificationsfragment",asStarter = false)
 public class NotificationsFragment extends Fragment {
 
     private NotificationsViewModel notificationsViewModel;
