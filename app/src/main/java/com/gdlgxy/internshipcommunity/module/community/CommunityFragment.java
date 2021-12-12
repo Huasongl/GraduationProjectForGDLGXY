@@ -1,0 +1,1 @@
+package com.gdlgxy.internshipcommunity.module.community;public class CommunityFragment {}

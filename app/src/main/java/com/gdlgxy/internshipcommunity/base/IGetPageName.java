@@ -1,0 +1,1 @@
+package com.gdlgxy.internshipcommunity.base;import com.gdlgxy.internshipcommunity.constant.PageName;public interface IGetPageName {    @PageName    String getPageName();}

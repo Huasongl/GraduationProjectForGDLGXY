@@ -1,0 +1,1 @@
+package com.gdlgxy.internshipcommunity.module.internship;public class InternshipViewModel {}
