@@ -7,22 +7,29 @@
       "size": 24,
       "enable": true,
       "index": 0,
-      "pageUrl": "main/tabs/home",
+      "pageUrl": "main/module/home",
       "title": "首页"
     },
     {
       "size": 24,
       "enable": true,
       "index": 1,
-      "pageUrl": "main/tabs/dashboardfragment",
-      "title": "更多"
+      "pageUrl": "main/module/community",
+      "title": "社区"
     },
     {
       "size": 24,
       "enable": true,
       "index": 2,
-      "pageUrl": "main/tabs/notificationsfragment",
-      "title": "通知"
+      "pageUrl": "main/module/internship",
+      "title": "实习"
+    },
+    {
+      "size": 24,
+      "enable": true,
+      "index": 3,
+      "pageUrl": "main/module/mine",
+      "title": "我的"
     }
   ]
 }

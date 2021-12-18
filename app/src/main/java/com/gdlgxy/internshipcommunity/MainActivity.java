@@ -1,21 +1,17 @@
 package com.gdlgxy.internshipcommunity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 
-import com.gdlgxy.internshipcommunity.ui.NavGraphBuilder;
-import com.gdlgxy.internshipcommunity.ui.view.AppBottomBar;
+import com.gdlgxy.internshipcommunity.module.mainpageconfig.NavGraphBuilder;
+import com.gdlgxy.internshipcommunity.module.mainpageconfig.view.AppBottomBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.gdlgxy.internshipcommunity.databinding.ActivityMainBinding;
 

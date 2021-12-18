@@ -1,1 +1,1 @@
-package com.gdlgxy.internshipcommunity.module.community;public class CommunityViewModel {}
+package com.gdlgxy.internshipcommunity.module.community;import androidx.lifecycle.LiveData;import androidx.lifecycle.MutableLiveData;import androidx.lifecycle.ViewModel;public class CommunityViewModel extends ViewModel {    private MutableLiveData<String> mText;    public CommunityViewModel() {        mText = new MutableLiveData<>();        mText.setValue("This is CommunityFragment");    }    public LiveData<String> getText() {        return mText;    }}

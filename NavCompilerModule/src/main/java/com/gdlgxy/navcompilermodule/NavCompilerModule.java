@@ -37,7 +37,7 @@ import javax.tools.StandardLocation;
 public class NavCompilerModule extends AbstractProcessor {
     private Messager messager;
     private Filer filer;
-    private static final String OUTPUT_FILE_NAME = "destnation.json";
+    private static final String OUTPUT_FILE_NAME = "destination.json";
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
@@ -128,6 +128,9 @@ public class NavCompilerModule extends AbstractProcessor {
                 object.put("className",className);
                 object.put("pageUrl",pageUrl);
                 object.put("isFragment",isFragment);
+                if(pageUrl !=null){
+                    destMap.put(pageUrl,object);
+                }
             }
         }
     }

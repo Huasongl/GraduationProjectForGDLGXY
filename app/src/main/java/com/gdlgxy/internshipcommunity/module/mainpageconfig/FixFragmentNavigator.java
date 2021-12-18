@@ -1,9 +1,14 @@
-package com.gdlgxy.internshipcommunity.ui;
+package com.gdlgxy.internshipcommunity.module.mainpageconfig;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import java.lang.reflect.Field;
+import java.util.ArrayDeque;
+import java.util.List;
+import java.util.Map;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
@@ -15,11 +20,6 @@ import androidx.navigation.NavDestination;
 import androidx.navigation.NavOptions;
 import androidx.navigation.Navigator;
 import androidx.navigation.fragment.FragmentNavigator;
-
-import java.lang.reflect.Field;
-import java.util.ArrayDeque;
-import java.util.List;
-import java.util.Map;
 
 /**
  * 定制的Fragment导航器，替换ft.replace(mContainerId, frag);为 hide()/show()

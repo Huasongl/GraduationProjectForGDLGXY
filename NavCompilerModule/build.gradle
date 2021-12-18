@@ -10,6 +10,8 @@ java {
 dependencies {
     implementation 'com.alibaba:fastjson:1.2.59'
     implementation project(path: ':NavAnnotationModule')
-    api 'com.google.auto.service:auto-service:1.0.1'
+    implementation 'com.alibaba:fastjson:1.2.59'
+
+    implementation 'com.google.auto.service:auto-service:1.0.1'
     annotationProcessor 'com.google.auto.service:auto-service:1.0.1'
 }
