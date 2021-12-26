@@ -131,9 +131,6 @@ public class FixFragmentNavigator extends FragmentNavigator {
         ft.setReorderingAllowed(true);
         ft.commit();
         // The commit succeeded, update our view of the world
-        if(mBackStack.contains(destId)){
-            isAdded = false;
-        }
         Log.d("Ruiz-backStack", String.valueOf(mBackStack));
         if (isAdded) {
             mBackStack.add(destId);
