@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.gdlgxy.internshipcommunity.base.BaseFragment;
 import com.gdlgxy.internshipcommunity.constant.PageName;
@@ -16,10 +15,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.viewbinding.ViewBinding;
 
 @FragmentDestination(pageUrl = "main/module/home", asStarter = true)
 public class HomeFragment extends BaseFragment<FragmentHomeBinding> {
+    private PageListPlayDetector playDetector;
+    private String feedType;
+    private boolean shouldPause = true;
     private HomeViewModel mHomeViewModel;
 
     @Override
