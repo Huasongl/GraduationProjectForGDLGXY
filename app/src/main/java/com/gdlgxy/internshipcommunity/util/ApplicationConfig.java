@@ -1,0 +1,1 @@
+package com.gdlgxy.internshipcommunity.util;public class ApplicationConfig {}

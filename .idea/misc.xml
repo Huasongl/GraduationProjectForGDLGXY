@@ -8,6 +8,7 @@
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2111111111111111" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2111111111111111" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/drawable/list_divider.xml" value="0.128" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/activity_layout_login.xml" value="0.19427083333333334" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/fragment_community.xml" value="0.16" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/fragment_dashboard.xml" value="0.20208333333333334" />
@@ -16,6 +17,12 @@
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/fragment_intership.xml" value="0.18795289855072464" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/fragment_mine.xml" value="0.18795289855072464" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_empty_view.xml" value="0.17395833333333333" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_feed_author.xml" value="0.1421875" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_feed_interaction.xml" value="0.1421875" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_feed_tag.xml" value="0.1421875" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_feed_text.xml" value="0.1421875" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_feed_top_comment.xml" value="0.1421875" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_feed_type_image.xml" value="0.842741935483871" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_refresh_view.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/list_divider.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/menu/bottom_nav_menu.xml" value="0.15989583333333332" />

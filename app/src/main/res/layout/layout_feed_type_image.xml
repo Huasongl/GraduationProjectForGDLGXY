@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="homeTabData"
+            type="HomeTabData" />
+
+        <variable
+            name="lifeCycleOwner"
+            type="androidx.lifecycle.LifecycleOwner" />
+
+        <import type="com.gdlgxy.internshipcommunity.module.home.HomeTabData"></import>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp_10">
+
+
+        <include
+            layout="@layout/layout_feed_author"
+            app:user="@{homeTabData.author}"></include>
+
+        <include
+            layout="@layout/layout_feed_text"
+            app:lines="@{3}"
+            app:feedText="@{homeTabData.feeds_text}"></include>
+
+
+        <!--   图片区域-->
+        <com.gdlgxy.internshipcommunity.widget.PPImageView
+            android:id="@+id/feed_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10"></com.gdlgxy.internshipcommunity.widget.PPImageView>
+
+        <include
+            layout="@layout/layout_feed_tag"
+            app:tagText="@{homeTabData.activityText}"></include>
+
+        <include
+            layout="@layout/layout_feed_top_comment"
+            app:comment="@{homeTabData.topComment}"></include>
+
+        <include
+            android:id="@+id/interaction_binding"
+            layout="@layout/layout_feed_interaction"
+            app:lifeCycleOwner="@{lifeCycleOwner}"
+            app:feed="@{homeTabData}"></include>
+    </LinearLayout>
+</layout>

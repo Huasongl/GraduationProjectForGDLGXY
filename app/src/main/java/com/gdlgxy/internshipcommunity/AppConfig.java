@@ -22,7 +22,6 @@ public class AppConfig {
     private static HashMap<String, Destination> sDestConfig;
     private static BottomBar sBottomBar;
     private static CommunityTabData sSofaTab, sFindTabConfig;
-
     public static HashMap<String, Destination> getDestConfig() {
         if (sDestConfig == null) {
             String content = parseFile("destination.json");
@@ -69,7 +68,7 @@ public class AppConfig {
     }
 
     private static String parseFile(String fileName) {
-        AssetManager assets = AppGlobals.getApplication().getAssets();
+        AssetManager assets = CommunityApplication.getApplication().getAssets();
         InputStream is = null;
         BufferedReader br = null;
         StringBuilder builder = new StringBuilder();
@@ -94,7 +93,6 @@ public class AppConfig {
 
             }
         }
-
         return builder.toString();
     }
 }
