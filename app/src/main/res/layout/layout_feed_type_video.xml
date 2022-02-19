@@ -35,11 +35,11 @@
 
 
         <!--   视频区域-->
-        <ListPlayerView
+        <com.gdlgxy.internshipcommunity.widget.ListPlayerView
             android:id="@+id/list_player_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/dp_10"></ListPlayerView>
+            android:layout_marginBottom="@dimen/dp_10"></com.gdlgxy.internshipcommunity.widget.ListPlayerView>
 
 
         <include

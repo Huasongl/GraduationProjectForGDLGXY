@@ -28,12 +28,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public abstract class BaseListFragment<T, M extends BaseViewModel<T>> extends Fragment implements OnRefreshListener, OnLoadMoreListener {
     protected LayoutRefreshViewBinding mViewBinding;
+
     protected RecyclerView mRecyclerView;
     protected SmartRefreshLayout mRefreshLayout;
     protected EmptyView mEmptyView;
     protected PagedListAdapter<T, RecyclerView.ViewHolder> mAdapter;
     protected M mViewModel;
-    protected DividerItemDecoration decoration;
+    protected DividerItemDecoration mDecoration;
 
     @Nullable
     @Override
@@ -51,9 +52,9 @@ public abstract class BaseListFragment<T, M extends BaseViewModel<T>> extends Fr
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setItemAnimator(null);
-        decoration = new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL);
-        decoration.setDrawable(ContextCompat.getDrawable(getContext(), R.drawable.list_divider));
-        mRecyclerView.addItemDecoration(decoration);
+        mDecoration = new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL);
+        mDecoration.setDrawable(ContextCompat.getDrawable(getContext(), R.drawable.list_divider));
+        mRecyclerView.addItemDecoration(mDecoration);
         genericViewModel();
         return mViewBinding.getRoot();
     }

@@ -1,11 +1,12 @@
 package com.gdlgxy.internshipcommunity.module.home;
 
+import com.gdlgxy.internshipcommunity.util.BR;
+
 import java.io.Serializable;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
-import androidx.databinding.library.baseAdapters.BR;
 
 public class Ugc extends BaseObservable implements Serializable {
     /**

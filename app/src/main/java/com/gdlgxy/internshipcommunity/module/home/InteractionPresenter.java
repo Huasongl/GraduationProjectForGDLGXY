@@ -1,5 +1,6 @@
 package com.gdlgxy.internshipcommunity.module.home;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
@@ -11,6 +12,9 @@ import com.gdlgxy.internshipcommunity.login.UserManager;
 import com.gdlgxy.internshipcommunity.network.ApiResponse;
 import com.gdlgxy.internshipcommunity.network.ApiService;
 import com.gdlgxy.internshipcommunity.network.JsonCallback;
+import com.gdlgxy.internshipcommunity.util.TagList;
+import com.gdlgxy.internshipcommunity.widget.LiveDataBus;
+import com.gdlgxy.internshipcommunity.widget.ShareDialog;
 
 
 import org.jetbrains.annotations.NotNull;
@@ -341,6 +345,7 @@ public class InteractionPresenter {
                 });
     }
 
+    @SuppressLint("RestrictedApi")
     private static void showToast(String message) {
         ArchTaskExecutor.getMainThreadExecutor().execute(new Runnable() {
             @Override

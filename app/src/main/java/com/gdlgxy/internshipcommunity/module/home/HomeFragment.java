@@ -47,7 +47,37 @@ public class HomeFragment extends BaseListFragment<HomeTabData, HomeViewModel> {
 
     @Override
     public PagedListAdapter getAdapter() {
-        return null;
+        feedType = getArguments() == null ? "all" : getArguments().getString("feedType");
+        return new HomePagedListAdapter(getContext(), feedType) {
+            @Override
+            public void onViewAttachedToWindow2(@NonNull ViewHolder holder) {
+                if (holder.isVideoItem()) {
+                    playDetector.addTarget(holder.getListPlayerView());
+                }
+            }
+
+            @Override
+            public void onViewDetachedFromWindow2(@NonNull ViewHolder holder) {
+                playDetector.removeTarget(holder.getListPlayerView());
+            }
+
+            @Override
+            public void onStartFeedDetailActivity(HomeTabData feed) {
+                boolean isVideo = feed.itemType == HomeTabData.TYPE_VIDEO;
+                shouldPause = !isVideo;
+            }
+
+            @Override
+            public void onCurrentListChanged(@Nullable PagedList<HomeTabData> previousList, @Nullable PagedList<HomeTabData> currentList) {
+                //这个方法是在我们每提交一次 pagelist对象到adapter 就会触发一次
+                //每调用一次 adpater.submitlist
+                if (previousList != null && currentList != null) {
+                    if (!currentList.containsAll(previousList)) {
+                        mRecyclerView.scrollToPosition(0);
+                    }
+                }
+            }
+        };
     }
 
     @Override

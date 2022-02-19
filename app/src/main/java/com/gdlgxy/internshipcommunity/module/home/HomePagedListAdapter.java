@@ -9,6 +9,9 @@ import android.widget.ImageView;
 import com.gdlgxy.internshipcommunity.BR;
 import com.gdlgxy.internshipcommunity.R;
 import com.gdlgxy.internshipcommunity.base.BasePagedListAdapter;
+import com.gdlgxy.internshipcommunity.databinding.LayoutFeedTypeImageBinding;
+import com.gdlgxy.internshipcommunity.databinding.LayoutFeedTypeVideoBinding;
+import com.gdlgxy.internshipcommunity.widget.ListPlayerView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -19,7 +22,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class HomePagedListAdapter extends BasePagedListAdapter<HomeTabData, HomePagedListAdapter.ViewHolder> {
-    private final LayoutInflater inflater;
+    private final LayoutInflater mInflater;
     protected Context mContext;
     protected String mCategory;
 
@@ -35,8 +38,7 @@ public class HomePagedListAdapter extends BasePagedListAdapter<HomeTabData, Home
                 return oldItem.equals(newItem);
             }
         });
-
-        inflater = LayoutInflater.from(context);
+        mInflater = LayoutInflater.from(context);
         mContext = context;
         mCategory = category;
     }
@@ -54,7 +56,7 @@ public class HomePagedListAdapter extends BasePagedListAdapter<HomeTabData, Home
 
     @Override
     protected ViewHolder onCreateViewHolder2(ViewGroup parent, int viewType) {
-        ViewDataBinding binding = DataBindingUtil.inflate(inflater, viewType, parent, false);
+        ViewDataBinding binding = DataBindingUtil.inflate(mInflater, viewType, parent, false);
         return new ViewHolder(binding.getRoot(), binding);
     }
 
@@ -65,15 +67,6 @@ public class HomePagedListAdapter extends BasePagedListAdapter<HomeTabData, Home
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FeedDetailActivity.startFeedDetailActivity(mContext, feed, mCategory);
-                onStartFeedDetailActivity(feed);
-                if (mFeedObserver == null) {
-                    mFeedObserver = new FeedObserver();
-                    LiveDataBus.get()
-                            .with(InteractionPresenter.DATA_FROM_INTERACTION)
-                            .observe((LifecycleOwner) mContext, mFeedObserver);
-                }
-                mFeedObserver.setFeed(feed);
             }
         });
     }
@@ -123,14 +116,15 @@ public class HomePagedListAdapter extends BasePagedListAdapter<HomeTabData, Home
                 LayoutFeedTypeImageBinding imageBinding = (LayoutFeedTypeImageBinding) mBinding;
                 feedImage = imageBinding.feedImage;
                 imageBinding.feedImage.bindData(item.width, item.height, 16, item.cover);
-                //imageBinding.setFeed(item);
-                //imageBinding.interactionBinding.setLifeCycleOwner((LifecycleOwner) mContext);
-            } else if (mBinding instanceof LayoutFeedTypeVideoBinding) {
+//                imageBinding.setFeed(item);
+//                imageBinding.interactionBinding.setLifeCycleOwner((LifecycleOwner) mContext);
+            }
+            else if (mBinding instanceof LayoutFeedTypeVideoBinding) {
                 LayoutFeedTypeVideoBinding videoBinding = (LayoutFeedTypeVideoBinding) mBinding;
                 videoBinding.listPlayerView.bindData(mCategory, item.width, item.height, item.cover, item.url);
                 listPlayerView = videoBinding.listPlayerView;
-                //videoBinding.setFeed(item);
-                //videoBinding.interactionBinding.setLifeCycleOwner((LifecycleOwner) mContext);
+//                videoBinding.setFeed(item);
+//                videoBinding.interactionBinding.setLifeCycleOwner((LifecycleOwner) mContext);
             }
         }
 

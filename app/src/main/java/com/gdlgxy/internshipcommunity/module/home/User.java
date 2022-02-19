@@ -3,7 +3,7 @@ package com.gdlgxy.internshipcommunity.module.home;
 import android.text.TextUtils;
 
 
-import com.gdlgxy.internshipcommunity.BR;
+import com.gdlgxy.internshipcommunity.util.BR;
 
 import java.io.Serializable;
 

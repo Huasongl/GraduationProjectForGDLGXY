@@ -6,15 +6,12 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 
 import com.gdlgxy.internshipcommunity.base.BaseActivity;
-import com.gdlgxy.internshipcommunity.base.IViewBinding;
 import com.gdlgxy.internshipcommunity.module.mainpageconfig.NavGraphBuilder;
 import com.gdlgxy.internshipcommunity.module.mainpageconfig.view.AppBottomBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentContainerView;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -24,10 +21,12 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
         implements BottomNavigationView.OnNavigationItemSelectedListener {
     private NavController mNavController;
     private AppBottomBar mNavView;
+    private static MainActivity sInstance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sInstance = this;
         setContentView(mViewBinding.getRoot());
         mNavView = mViewBinding.navView;
         Fragment fragment = getSupportFragmentManager().findFragmentById(mViewBinding.navHostFragmentActivityMain.getId());
@@ -44,17 +43,30 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
 
     @Override
     public void onBackPressed() {
-        //当前正在显示的页面destinationId
         int currentPageId = mNavController.getCurrentDestination().getId();
-        //APP页面路导航结构图  首页的destinationId
         int homeDestId = mNavController.getGraph().getStartDestination();
-        //如果当前正在显示的页面不是首页，而我们点击了返回键，则拦截。
         if (currentPageId != homeDestId) {
             mNavView.setSelectedItemId(homeDestId);
             return;
         }
-        //否则 finish，此处不宜调用onBackPressed。因为navigation会操作回退栈,切换到之前显示的页面。
         finish();
+    }
+
+    @Override
+    protected void onPause() {
+        if (isFinishing()) {
+            sInstance = null;
+        }
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    public static MainActivity getInstance(){
+        return sInstance;
     }
 
     @Override
