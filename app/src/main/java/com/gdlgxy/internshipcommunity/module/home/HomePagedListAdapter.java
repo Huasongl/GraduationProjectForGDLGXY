@@ -16,7 +16,6 @@ import com.gdlgxy.internshipcommunity.widget.ListPlayerView;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
@@ -110,7 +109,7 @@ public class HomePagedListAdapter extends BasePagedListAdapter<HomeTabData, Home
             //而dataBinding的执行默认是延迟一帧的。
             //当列表上下滑动的时候 ，会明显的看到宽高尺寸不对称的问题
 
-            mBinding.setVariable(BR.feed, item);
+            mBinding.setVariable(BR.homeTabData, item);
             mBinding.setVariable(BR.lifeCycleOwner, mContext);
             if (mBinding instanceof LayoutFeedTypeImageBinding) {
                 LayoutFeedTypeImageBinding imageBinding = (LayoutFeedTypeImageBinding) mBinding;

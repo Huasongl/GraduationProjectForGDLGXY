@@ -53,7 +53,7 @@
         <include
             android:id="@+id/interaction_binding"
             layout="@layout/layout_feed_interaction"
-            app:feed="@{homeTabData}"
+            app:homeTabData="@{homeTabData}"
             app:lifeCycleOwner="@{lifeCycleOwner}"></include>
     </LinearLayout>
 </layout>

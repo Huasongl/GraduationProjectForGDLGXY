@@ -19,7 +19,7 @@
 
         <import type="android.view.View"></import>
 
-        <import type="com.mooc.ppjoke.utils.StringConvert"></import>
+        <import type="com.gdlgxy.internshipcommunity.util.StringConvert"></import>
 
     </data>
 
