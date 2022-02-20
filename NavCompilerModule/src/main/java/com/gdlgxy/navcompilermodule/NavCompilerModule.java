@@ -30,7 +30,7 @@ import javax.tools.FileObject;
 import javax.tools.StandardLocation;
 
 @AutoService(Processor.class)
-@SupportedSourceVersion(SourceVersion.RELEASE_11)
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
 @SupportedAnnotationTypes(
         {"com.gdlgxy.navannotationmodule.ActivityDestination",
                 "com.gdlgxy.navannotationmodule.FragmentDestination"})

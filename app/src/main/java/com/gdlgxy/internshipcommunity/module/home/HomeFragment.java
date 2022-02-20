@@ -19,7 +19,7 @@ import androidx.paging.PagedListAdapter;
 @FragmentDestination(pageUrl = "main/module/home", asStarter = true)
 public class HomeFragment extends BaseListFragment<HomeTabData, HomeViewModel> {
     private PageListPlayDetector playDetector;
-    private String mPageType;
+    private String mPageType = "pics";
     private boolean shouldPause = true;
 
     @Override
@@ -50,7 +50,7 @@ public class HomeFragment extends BaseListFragment<HomeTabData, HomeViewModel> {
 
     @Override
     public PagedListAdapter getAdapter() {
-        mPageType = getArguments() == null ? "all" : getArguments().getString("pageType");
+        mPageType = getArguments() == null ? "pics" : getArguments().getString("pageType");
         return new HomePagedListAdapter(getContext(), mPageType) {
             @Override
             public void onViewAttachedToWindow2(@NonNull ViewHolder holder) {

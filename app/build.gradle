@@ -121,4 +121,12 @@ dependencies {
     //错误收集
     implementation 'com.tencent.bugly:crashreport:latest.release'
     implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+
+    // 下拉刷新
+    implementation("in.srain.cube:ultra-ptr:1.0.11")
+    // Banner
+    implementation("io.github.youth5201314:banner:2.2.2")
+
+    // Lottie
+    implementation("com.airbnb.android:lottie:4.2.1")
 }
