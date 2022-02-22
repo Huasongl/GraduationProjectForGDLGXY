@@ -26,23 +26,20 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private View actionClose;
     private View actionLogin;
-    private Tencent tencent;
+    private Tencent mTencent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layout_login);
-
         actionClose = findViewById(R.id.action_close);
         actionLogin = findViewById(R.id.action_login);
-
         actionClose.setOnClickListener(this);
         actionLogin.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-
         if (v.getId() == R.id.action_close) {
             finish();
         } else if (v.getId() == R.id.action_login) {
@@ -51,13 +48,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void login() {
-        if (tencent == null) {
-            tencent = Tencent.createInstance("101794421", getApplicationContext());
+        if (mTencent == null) {
+            mTencent = Tencent.createInstance("101794421", getApplicationContext());
         }
-        tencent.login(this, "all", loginListener);
+        mTencent.login(this, "all", mLoginListener);
     }
 
-    IUiListener loginListener = new IUiListener() {
+    IUiListener mLoginListener = new IUiListener() {
         @Override
         public void onComplete(Object o) {
             JSONObject response = (JSONObject) o;
@@ -66,10 +63,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 String access_token = response.getString("access_token");
                 String expires_in = response.getString("expires_in");
                 long expires_time = response.getLong("expires_time");
-
-                tencent.setOpenId(openid);
-                tencent.setAccessToken(access_token, expires_in);
-                QQToken qqToken = tencent.getQQToken();
+                mTencent.setOpenId(openid);
+                mTencent.setAccessToken(access_token, expires_in);
+                QQToken qqToken = mTencent.getQQToken();
                 getUserInfo(qqToken, expires_time, openid);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -152,7 +148,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == Constants.REQUEST_LOGIN) {
-            Tencent.onActivityResultData(requestCode, resultCode, data, loginListener);
+            Tencent.onActivityResultData(requestCode, resultCode, data, mLoginListener);
         }
     }
 }

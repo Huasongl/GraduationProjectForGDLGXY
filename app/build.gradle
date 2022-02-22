@@ -8,6 +8,14 @@ kapt {
 }
 
 android {
+    signingConfigs {
+        sign {
+            storeFile file('../app/zhangyaohua.jks')
+            storePassword '123456789.'
+            keyAlias 'yaohuadev'
+            keyPassword '123456789.'
+        }
+    }
     compileSdk 31
 
     defaultConfig {
@@ -37,6 +45,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.sign
         }
     }
     compileOptions {
