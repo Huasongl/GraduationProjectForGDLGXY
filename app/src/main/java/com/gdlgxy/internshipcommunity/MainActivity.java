@@ -12,12 +12,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModel;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.gdlgxy.internshipcommunity.databinding.ActivityMainBinding;
 
-public class MainActivity extends BaseActivity<ActivityMainBinding>
+public class MainActivity extends BaseActivity<ActivityMainBinding, ViewModel>
         implements BottomNavigationView.OnNavigationItemSelectedListener {
     private NavController mNavController;
     private AppBottomBar mNavView;
@@ -27,9 +28,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         sInstance = this;
-        setContentView(mViewBinding.getRoot());
-        mNavView = mViewBinding.navView;
-        Fragment fragment = getSupportFragmentManager().findFragmentById(mViewBinding.navHostFragmentActivityMain.getId());
+        setContentView(mView.getRoot());
+        mNavView = mView.navView;
+        Fragment fragment = getSupportFragmentManager().findFragmentById(mView.navHostFragmentActivityMain.getId());
         mNavController = NavHostFragment.findNavController(fragment);
         NavGraphBuilder.build(this, mNavController, fragment.getChildFragmentManager(), fragment.getId());
         mNavView.setOnNavigationItemSelectedListener(this);
@@ -63,6 +64,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
+
+    @Override
+    protected ViewModel createViewModel() {
+        return null;
     }
 
     public static MainActivity getInstance(){
