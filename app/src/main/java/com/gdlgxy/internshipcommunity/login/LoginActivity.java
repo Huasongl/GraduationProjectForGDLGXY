@@ -2,10 +2,12 @@ package com.gdlgxy.internshipcommunity.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
-import com.gdlgxy.internshipcommunity.R;
+import com.gdlgxy.internshipcommunity.base.BaseActivity;
+import com.gdlgxy.internshipcommunity.databinding.ActivityLayoutLoginBinding;
 import com.gdlgxy.internshipcommunity.module.home.User;
 import com.gdlgxy.internshipcommunity.network.ApiResponse;
 import com.gdlgxy.internshipcommunity.network.ApiService;
@@ -21,35 +23,32 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-    private View actionClose;
-    private View actionLogin;
+public class LoginActivity extends BaseActivity<ActivityLayoutLoginBinding, LoginViewModel> implements View.OnClickListener {
     private Tencent mTencent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_layout_login);
-        actionClose = findViewById(R.id.action_close);
-        actionLogin = findViewById(R.id.action_login);
-        actionClose.setOnClickListener(this);
-        actionLogin.setOnClickListener(this);
+        mView.actionLogin.setOnClickListener(this);
+    }
+
+    @Override
+    protected LoginViewModel createViewModel() {
+        return ViewModelProvider.NewInstanceFactory.getInstance().create(LoginViewModel.class);
     }
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.action_close) {
-            finish();
-        } else if (v.getId() == R.id.action_login) {
+        if (v.getId() == mView.actionLogin.getId()) {
             login();
         }
     }
 
     private void login() {
         if (mTencent == null) {
-            mTencent = Tencent.createInstance("101794421", getApplicationContext());
+            mTencent = Tencent.createInstance("101993725", getApplicationContext());
         }
         mTencent.login(this, "all", mLoginListener);
     }
@@ -150,5 +149,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (requestCode == Constants.REQUEST_LOGIN) {
             Tencent.onActivityResultData(requestCode, resultCode, data, mLoginListener);
         }
+    }
+
+    @Override
+    public String getPageName() {
+        return null;
+    }
+
+    @Override
+    public ActivityLayoutLoginBinding inflate_Activity(LayoutInflater layoutInflater) {
+        return ActivityLayoutLoginBinding.inflate(getLayoutInflater());
     }
 }

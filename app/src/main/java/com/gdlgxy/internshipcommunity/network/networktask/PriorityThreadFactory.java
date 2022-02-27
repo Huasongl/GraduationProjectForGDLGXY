@@ -1,0 +1,1 @@
+package com.gdlgxy.internshipcommunity.network.networktask;import java.util.concurrent.ThreadFactory;public class PriorityThreadFactory implements ThreadFactory {    public PriorityThreadFactory(String s, int threadPriorityBackground) {    }    @Override    public Thread newThread(Runnable r) {        return null;    }}

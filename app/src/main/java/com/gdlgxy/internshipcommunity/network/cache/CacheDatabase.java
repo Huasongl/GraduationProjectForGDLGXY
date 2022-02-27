@@ -8,17 +8,18 @@ import androidx.room.RoomDatabase;
 
 @Database(entities = {Cache.class}, version = 2)
 public abstract class CacheDatabase extends RoomDatabase {
-    private static final CacheDatabase database;
+    private static final String NAME = "network_cache";
+    private static CacheDatabase sNetworkCacheDatabase;
 
-    static {
-        database = Room.databaseBuilder(CommunityApplication.getApplication(), CacheDatabase.class, "community_cache")
-                .allowMainThreadQueries()
-                .build();
+    public static synchronized CacheDatabase getInstance() {
+        if (sNetworkCacheDatabase == null) {
+            sNetworkCacheDatabase = Room.databaseBuilder(CommunityApplication.getApplication(),
+                    CacheDatabase.class, NAME)
+                    .allowMainThreadQueries()
+                    .build();
+        }
+        return sNetworkCacheDatabase;
     }
 
     public abstract CacheDao getCache();
-
-    public static CacheDatabase get() {
-        return database;
-    }
 }

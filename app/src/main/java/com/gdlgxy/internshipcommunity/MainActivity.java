@@ -6,18 +6,20 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 
 import com.gdlgxy.internshipcommunity.base.BaseActivity;
+import com.gdlgxy.internshipcommunity.login.LoginViewModel;
 import com.gdlgxy.internshipcommunity.module.mainpageconfig.NavGraphBuilder;
 import com.gdlgxy.internshipcommunity.module.mainpageconfig.view.AppBottomBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.gdlgxy.internshipcommunity.databinding.ActivityMainBinding;
 
-public class MainActivity extends BaseActivity<ActivityMainBinding>
+public class MainActivity extends BaseActivity<ActivityMainBinding, LoginViewModel>
         implements BottomNavigationView.OnNavigationItemSelectedListener {
     private NavController mNavController;
     private AppBottomBar mNavView;
@@ -27,9 +29,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         sInstance = this;
-        setContentView(mViewBinding.getRoot());
-        mNavView = mViewBinding.navView;
-        Fragment fragment = getSupportFragmentManager().findFragmentById(mViewBinding.navHostFragmentActivityMain.getId());
+        mNavView = mView.navView;
+        Fragment fragment = getSupportFragmentManager().findFragmentById(mView.navHostFragmentActivityMain.getId());
         mNavController = NavHostFragment.findNavController(fragment);
         NavGraphBuilder.build(this, mNavController, fragment.getChildFragmentManager(), fragment.getId());
         mNavView.setOnNavigationItemSelectedListener(this);
@@ -65,7 +66,17 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
         super.onDestroy();
     }
 
-    public static MainActivity getInstance(){
+    @Override
+    protected LoginViewModel createViewModel() {
+        return ViewModelProvider.NewInstanceFactory.getInstance().create(LoginViewModel.class);
+    }
+
+//    @Override
+//    protected ViewModel createViewModel() {
+//        return ViewModelProvider.NewInstanceFactory.getInstance().create(ViewModel.class);
+//    }
+
+    public static MainActivity getInstance() {
         return sInstance;
     }
 

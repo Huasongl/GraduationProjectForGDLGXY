@@ -64,7 +64,7 @@ public class CacheManager {
         Cache cache = new Cache();
         cache.key = key;
         cache.data = toByteArray(body);
-        CacheDatabase.get().getCache().delete(cache);
+        CacheDatabase.getInstance().getCache().delete(cache);
     }
 
     public static <T> void save(String key, T body) {
@@ -72,11 +72,11 @@ public class CacheManager {
         cache.key = key;
         cache.data = toByteArray(body);
 
-        CacheDatabase.get().getCache().save(cache);
+        CacheDatabase.getInstance().getCache().save(cache);
     }
 
     public static Object getCache(String key) {
-        Cache cache = CacheDatabase.get().getCache().getCache(key);
+        Cache cache = CacheDatabase.getInstance().getCache().getCache(key);
         if (cache != null && cache.data != null) {
             return toObject(cache.data);
         }

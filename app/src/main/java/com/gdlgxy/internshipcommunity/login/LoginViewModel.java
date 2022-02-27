@@ -1,0 +1,1 @@
+package com.gdlgxy.internshipcommunity.login;import androidx.lifecycle.ViewModel;public class LoginViewModel extends ViewModel {}

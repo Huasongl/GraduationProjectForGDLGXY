@@ -1,0 +1,1 @@
+package com.gdlgxy.internshipcommunity.network.networktask;public interface MakeUrlInterface {}

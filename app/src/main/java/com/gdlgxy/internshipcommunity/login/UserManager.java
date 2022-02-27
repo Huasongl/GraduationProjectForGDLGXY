@@ -1,5 +1,6 @@
 package com.gdlgxy.internshipcommunity.login;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -29,7 +30,7 @@ public class UserManager {
 
     private UserManager() {
         User cache = (User) CacheManager.getCache(KEY_CACHE_USER);
-        if (cache != null ) { //&& cache.expires_time > System.currentTimeMillis()
+        if (cache != null) { //&& cache.expires_time > System.currentTimeMillis()
             mUser = cache;
         }
     }
@@ -56,7 +57,14 @@ public class UserManager {
     }
 
     public User getUser() {
-        return isLogin() ? mUser : null;
+        if (isLogin()) {
+            return mUser;
+        }
+        User user = new User();
+        user.avatar = "";
+        user.description = "************";
+        user.name = "未登录";
+        return user;
     }
 
     public long getUserId() {
@@ -65,10 +73,11 @@ public class UserManager {
 
 
     public LiveData<User> refresh() {
-        if (!isLogin()) {
-            return login(CommunityApplication.getApplication());
-        }
         MutableLiveData<User> liveData = new MutableLiveData<>();
+        if (!isLogin()) {
+            liveData.postValue(getUser());
+            return liveData;
+        }
         ApiService.get("/user/query")
                 .addParam("userId", getUserId())
                 .execute(new JsonCallback<User>() {
@@ -78,6 +87,7 @@ public class UserManager {
                         liveData.postValue(getUser());
                     }
 
+                    @SuppressLint("RestrictedApi")
                     @Override
                     public void onError(ApiResponse<User> response) {
                         ArchTaskExecutor.getMainThreadExecutor().execute(new Runnable() {
