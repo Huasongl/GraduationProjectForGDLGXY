@@ -112,13 +112,13 @@
                 android:id="@+id/textView_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/action_login"
+                android:layout_above="@+id/qq_login_button"
                 android:layout_centerHorizontal="true"
                 android:text="- 三方登录 -"
                 android:textColor="@color/white" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/action_login"
+                android:id="@+id/qq_login_button"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_45"
                 android:layout_above="@+id/textView_2"

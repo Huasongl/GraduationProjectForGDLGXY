@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
+import com.gdlgxy.internshipcommunity.CommunityApplication;
 import com.gdlgxy.internshipcommunity.base.BaseActivity;
 import com.gdlgxy.internshipcommunity.databinding.ActivityLayoutLoginBinding;
 import com.gdlgxy.internshipcommunity.module.home.User;
@@ -31,6 +32,7 @@ public class LoginActivity extends BaseActivity<ActivityLayoutLoginBinding, View
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mView.qqLoginButton.setOnClickListener(this);
     }
 
     @Override
@@ -40,12 +42,14 @@ public class LoginActivity extends BaseActivity<ActivityLayoutLoginBinding, View
 
     @Override
     public void onClick(View v) {
-
+        if (v.getId() == mView.qqLoginButton.getId()) {
+            login();
+        }
     }
 
     private void login() {
         if (mTencent == null) {
-            mTencent = Tencent.createInstance("101993725", getApplicationContext());
+            mTencent = Tencent.createInstance("101993725", CommunityApplication.getApplication());
         }
         mTencent.login(this, "all", mLoginListener);
     }

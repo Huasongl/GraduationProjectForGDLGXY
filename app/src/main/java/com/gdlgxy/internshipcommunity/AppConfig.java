@@ -7,6 +7,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.gdlgxy.internshipcommunity.module.community.CommunityTabData;
 import com.gdlgxy.internshipcommunity.module.mainpageconfig.data.BottomBar;
+import com.gdlgxy.internshipcommunity.module.mainpageconfig.data.Destination;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,8 +16,6 @@ import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-
-import androidx.navigation.safe.args.generator.models.Destination;
 
 public class AppConfig {
     private static HashMap<String, Destination> sDestConfig;

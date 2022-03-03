@@ -6,17 +6,25 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 
 import com.gdlgxy.internshipcommunity.base.BaseActivity;
+import com.gdlgxy.internshipcommunity.login.UserManager;
+import com.gdlgxy.internshipcommunity.module.home.User;
 import com.gdlgxy.internshipcommunity.module.mainpageconfig.NavGraphBuilder;
+import com.gdlgxy.internshipcommunity.module.mainpageconfig.data.Destination;
 import com.gdlgxy.internshipcommunity.module.mainpageconfig.view.AppBottomBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.gdlgxy.internshipcommunity.databinding.ActivityMainBinding;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding, ViewModel>
         implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -28,7 +36,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, ViewModel>
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         sInstance = this;
-        setContentView(mView.getRoot());
         mNavView = mView.navView;
         Fragment fragment = getSupportFragmentManager().findFragmentById(mView.navHostFragmentActivityMain.getId());
         mNavController = NavHostFragment.findNavController(fragment);
@@ -71,7 +78,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, ViewModel>
         return null;
     }
 
-    public static MainActivity getInstance(){
+    public static MainActivity getInstance() {
         return sInstance;
     }
 
