@@ -7,20 +7,26 @@
   "tabGravity": 0,
   "tabs": [
     {
-      "title": "图片",
+      "title": "综合区",
       "index": 0,
       "tag": "pics",
       "enable": true
     },
     {
-      "title": "视频",
+      "title": "实习区",
       "index": 1,
       "tag": "video",
       "enable": true
     },
     {
-      "title": "文本",
+      "title": "校园区",
       "index": 2,
+      "tag": "text",
+      "enable": true
+    },
+    {
+      "title": "游戏区",
+      "index": 3,
       "tag": "text",
       "enable": true
     }

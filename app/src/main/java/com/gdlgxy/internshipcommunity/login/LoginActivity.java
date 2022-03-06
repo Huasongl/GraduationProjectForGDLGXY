@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
+import com.gdlgxy.internshipcommunity.CommunityApplication;
 import com.gdlgxy.internshipcommunity.base.BaseActivity;
 import com.gdlgxy.internshipcommunity.databinding.ActivityLayoutLoginBinding;
 import com.gdlgxy.internshipcommunity.module.basepaging.User;
@@ -23,32 +24,32 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import androidx.annotation.Nullable;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModel;
 
-public class LoginActivity extends BaseActivity<ActivityLayoutLoginBinding, LoginViewModel> implements View.OnClickListener {
+public class LoginActivity extends BaseActivity<ActivityLayoutLoginBinding, ViewModel> implements View.OnClickListener {
     private Tencent mTencent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mView.actionLogin.setOnClickListener(this);
+        mView.qqLoginButton.setOnClickListener(this);
     }
 
     @Override
-    protected LoginViewModel createViewModel() {
-        return ViewModelProvider.NewInstanceFactory.getInstance().create(LoginViewModel.class);
+    protected ViewModel createViewModel() {
+        return null;
     }
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == mView.actionLogin.getId()) {
+        if (v.getId() == mView.qqLoginButton.getId()) {
             login();
         }
     }
 
     private void login() {
         if (mTencent == null) {
-            mTencent = Tencent.createInstance("101993725", getApplicationContext());
+            mTencent = Tencent.createInstance("101993725", CommunityApplication.getApplication());
         }
         mTencent.login(this, "all", mLoginListener);
     }
@@ -158,6 +159,6 @@ public class LoginActivity extends BaseActivity<ActivityLayoutLoginBinding, Logi
 
     @Override
     public ActivityLayoutLoginBinding inflate_Activity(LayoutInflater layoutInflater) {
-        return ActivityLayoutLoginBinding.inflate(getLayoutInflater());
+        return ActivityLayoutLoginBinding.inflate(layoutInflater);
     }
 }
