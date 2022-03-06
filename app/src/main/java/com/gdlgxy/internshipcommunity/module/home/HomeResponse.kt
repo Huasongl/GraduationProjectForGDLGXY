@@ -1,0 +1,1 @@
+package com.gdlgxy.internshipcommunity.module.homeimport com.google.gson.annotations.SerializedNameclass HomeResponse {    @SerializedName("items")    val item: List<HomeData> = emptyList()}

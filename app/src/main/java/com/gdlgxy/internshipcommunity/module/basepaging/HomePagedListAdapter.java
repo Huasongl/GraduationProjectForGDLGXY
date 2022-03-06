@@ -1,4 +1,4 @@
-package com.gdlgxy.internshipcommunity.module.home;
+package com.gdlgxy.internshipcommunity.module.basepaging;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -20,20 +20,20 @@ import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class HomePagedListAdapter extends BasePagedListAdapter<HomeTabData, HomePagedListAdapter.ViewHolder> {
+public class HomePagedListAdapter extends BasePagedListAdapter<PagingTabData, HomePagedListAdapter.ViewHolder> {
     private final LayoutInflater mInflater;
     protected Context mContext;
     protected String mCategory;
 
     public HomePagedListAdapter(Context context, String category) {
-        super(new DiffUtil.ItemCallback<HomeTabData>() {
+        super(new DiffUtil.ItemCallback<PagingTabData>() {
             @Override
-            public boolean areItemsTheSame(@NonNull HomeTabData oldItem, @NonNull HomeTabData newItem) {
+            public boolean areItemsTheSame(@NonNull PagingTabData oldItem, @NonNull PagingTabData newItem) {
                 return oldItem.id == newItem.id;
             }
 
             @Override
-            public boolean areContentsTheSame(@NonNull HomeTabData oldItem, @NonNull HomeTabData newItem) {
+            public boolean areContentsTheSame(@NonNull PagingTabData oldItem, @NonNull PagingTabData newItem) {
                 return oldItem.equals(newItem);
             }
         });
@@ -44,10 +44,10 @@ public class HomePagedListAdapter extends BasePagedListAdapter<HomeTabData, Home
 
     @Override
     public int getItemViewType2(int position) {
-        HomeTabData feed = getItem(position);
-        if (feed.itemType == HomeTabData.TYPE_IMAGE_TEXT) {
+        PagingTabData feed = getItem(position);
+        if (feed.itemType == PagingTabData.TYPE_IMAGE_TEXT) {
             return R.layout.layout_feed_type_image;
-        } else if (feed.itemType == HomeTabData.TYPE_VIDEO) {
+        } else if (feed.itemType == PagingTabData.TYPE_VIDEO) {
             return R.layout.layout_feed_type_video;
         }
         return 0;
@@ -61,7 +61,7 @@ public class HomePagedListAdapter extends BasePagedListAdapter<HomeTabData, Home
 
     @Override
     protected void onBindViewHolder2(ViewHolder holder, int position) {
-        final HomeTabData feed = getItem(position);
+        final PagingTabData feed = getItem(position);
         holder.bindData(feed);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,17 +70,17 @@ public class HomePagedListAdapter extends BasePagedListAdapter<HomeTabData, Home
         });
     }
 
-    public void onStartFeedDetailActivity(HomeTabData feed) {
+    public void onStartFeedDetailActivity(PagingTabData feed) {
 
     }
 
     private FeedObserver mFeedObserver;
 
-    private class FeedObserver implements Observer<HomeTabData> {
-        private HomeTabData mFeed;
+    private class FeedObserver implements Observer<PagingTabData> {
+        private PagingTabData mFeed;
 
         @Override
-        public void onChanged(HomeTabData newOne) {
+        public void onChanged(PagingTabData newOne) {
             if (mFeed.id != newOne.id)
                 return;
             mFeed.author = newOne.author;
@@ -88,7 +88,7 @@ public class HomePagedListAdapter extends BasePagedListAdapter<HomeTabData, Home
             mFeed.notifyChange();
         }
 
-        public void setFeed(HomeTabData feed) {
+        public void setFeed(PagingTabData feed) {
             mFeed = feed;
         }
     }
@@ -104,12 +104,12 @@ public class HomePagedListAdapter extends BasePagedListAdapter<HomeTabData, Home
             mBinding = binding;
         }
 
-        public void bindData(HomeTabData item) {
+        public void bindData(PagingTabData item) {
             //这里之所以手动绑定数据的原因是 图片 和视频区域都是需要计算的
             //而dataBinding的执行默认是延迟一帧的。
             //当列表上下滑动的时候 ，会明显的看到宽高尺寸不对称的问题
 
-            mBinding.setVariable(BR.homeTabData, item);
+            mBinding.setVariable(BR.pagingTabData, item);
             mBinding.setVariable(BR.lifeCycleOwner, mContext);
             if (mBinding instanceof LayoutFeedTypeImageBinding) {
                 LayoutFeedTypeImageBinding imageBinding = (LayoutFeedTypeImageBinding) mBinding;

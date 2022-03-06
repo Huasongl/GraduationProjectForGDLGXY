@@ -64,7 +64,7 @@
 
     <data>
 
-        <import type="com.gdlgxy.internshipcommunity.module.home.User"></import>
+        <import type="com.gdlgxy.internshipcommunity.module.basepaging.User"></import>
 
         <variable
             name="user"

@@ -29,7 +29,7 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".CommunityActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
@@ -60,4 +60,7 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     </application>
 
+    <queries>
+        <package android:name="com.tencent.mobileqq" />
+    </queries>
 </manifest>

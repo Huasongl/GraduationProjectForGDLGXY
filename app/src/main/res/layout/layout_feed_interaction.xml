@@ -6,18 +6,18 @@
     <data>
 
         <variable
-            name="homeTabData"
-            type="HomeTabData" />
+            name="pagingTabData"
+            type="PagingTabData" />
 
         <variable
             name="lifeCycleOwner"
             type="androidx.lifecycle.LifecycleOwner" />
 
-        <import type="com.gdlgxy.internshipcommunity.module.home.HomeTabData"></import>
+        <import type="com.gdlgxy.internshipcommunity.module.basepaging.PagingTabData"></import>
 
         <import type="com.gdlgxy.internshipcommunity.util.StringConvert"></import>
 
-        <import type="com.gdlgxy.internshipcommunity.module.home.InteractionPresenter" />
+        <import type="com.gdlgxy.internshipcommunity.module.basepaging.InteractionPresenter" />
 
         <import type="android.content.Context" />
 
@@ -36,16 +36,16 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="@{()->InteractionPresenter.toggleFeedLike(lifeCycleOwner,homeTabData)}"
-            android:text="@{homeTabData.ugc.likeCount>0?StringConvert.convertFeedUgc(homeTabData.ugc.likeCount):@string/like}"
-            android:textColor="@{homeTabData.ugc.hasLiked?@color/color_theme:@color/color_3d3}"
+            android:onClick="@{()->InteractionPresenter.toggleFeedLike(lifeCycleOwner,pagingTabData)}"
+            android:text="@{pagingTabData.ugc.likeCount>0?StringConvert.convertFeedUgc(pagingTabData.ugc.likeCount):@string/like}"
+            android:textColor="@{pagingTabData.ugc.hasLiked?@color/color_theme:@color/color_3d3}"
             android:textSize="@dimen/sp_14"
             app:backgroundTint="@color/color_white"
             app:cornerRadius="0dp"
-            app:icon="@{homeTabData.ugc.hasLiked?@drawable/icon_cell_liked:@drawable/icon_cell_like}"
+            app:icon="@{pagingTabData.ugc.hasLiked?@drawable/icon_cell_liked:@drawable/icon_cell_like}"
             app:iconGravity="textStart"
             app:iconPadding="4dp"
-            app:iconTint="@{homeTabData.ugc.hasLiked?@color/color_theme:@color/color_3d3}"
+            app:iconTint="@{pagingTabData.ugc.hasLiked?@color/color_theme:@color/color_3d3}"
             tools:icon="@drawable/icon_cell_like"
             tools:iconTint="@color/color_3d3"
             tools:text="1000"
@@ -57,16 +57,16 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="@{()->InteractionPresenter.toggleFeedDiss(lifeCycleOwner,homeTabData)}"
+            android:onClick="@{()->InteractionPresenter.toggleFeedDiss(lifeCycleOwner,pagingTabData)}"
             android:text="踩"
-            android:textColor="@{homeTabData.ugc.hasdiss?@color/color_theme:@color/color_3d3}"
+            android:textColor="@{pagingTabData.ugc.hasdiss?@color/color_theme:@color/color_3d3}"
             android:textSize="@dimen/sp_14"
             app:backgroundTint="@color/color_white"
             app:cornerRadius="0dp"
-            app:icon="@{homeTabData.ugc.hasdiss?@drawable/icon_cell_dissed:@drawable/icon_cell_diss}"
+            app:icon="@{pagingTabData.ugc.hasdiss?@drawable/icon_cell_dissed:@drawable/icon_cell_diss}"
             app:iconGravity="textStart"
             app:iconPadding="4dp"
-            app:iconTint="@{homeTabData.ugc.hasdiss?@color/color_theme:@color/color_3d3}"
+            app:iconTint="@{pagingTabData.ugc.hasdiss?@color/color_theme:@color/color_3d3}"
             tools:icon="@drawable/icon_cell_diss"
             tools:iconTint="@color/color_3d3"
             tools:text="1000"
@@ -78,7 +78,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@{homeTabData.ugc.commentCount>0?StringConvert.convertFeedUgc(homeTabData.ugc.commentCount):@string/feed_comment}"
+            android:text="@{pagingTabData.ugc.commentCount>0?StringConvert.convertFeedUgc(pagingTabData.ugc.commentCount):@string/feed_comment}"
             android:textColor="@color/color_3d3"
             android:textSize="@dimen/sp_14"
             app:backgroundTint="@color/color_white"
@@ -98,8 +98,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="@{()->InteractionPresenter.openShare(((Context)lifeCycleOwner),homeTabData)}"
-            android:text="@{homeTabData.ugc.shareCount>0?StringConvert.convertFeedUgc(homeTabData.ugc.shareCount):@string/share}"
+            android:onClick="@{()->InteractionPresenter.openShare(((Context)lifeCycleOwner),pagingTabData)}"
+            android:text="@{pagingTabData.ugc.shareCount>0?StringConvert.convertFeedUgc(pagingTabData.ugc.shareCount):@string/share}"
             android:textColor="@color/color_3d3"
             android:textSize="@dimen/sp_14"
             app:backgroundTint="@color/color_white"

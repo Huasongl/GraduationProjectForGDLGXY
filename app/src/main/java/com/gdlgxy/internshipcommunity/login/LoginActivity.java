@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.gdlgxy.internshipcommunity.base.BaseActivity;
 import com.gdlgxy.internshipcommunity.databinding.ActivityLayoutLoginBinding;
-import com.gdlgxy.internshipcommunity.module.home.User;
+import com.gdlgxy.internshipcommunity.module.basepaging.User;
 import com.gdlgxy.internshipcommunity.network.ApiResponse;
 import com.gdlgxy.internshipcommunity.network.ApiService;
 import com.gdlgxy.internshipcommunity.network.JsonCallback;

@@ -5,14 +5,14 @@
     <data>
 
         <variable
-            name="homeTabData"
-            type="HomeTabData" />
+            name="pagingTabData"
+            type="PagingTabData" />
 
         <variable
             name="lifeCycleOwner"
             type="androidx.lifecycle.LifecycleOwner" />
 
-        <import type="com.gdlgxy.internshipcommunity.module.home.HomeTabData"></import>
+        <import type="com.gdlgxy.internshipcommunity.module.basepaging.PagingTabData"></import>
 
     </data>
 
@@ -26,12 +26,12 @@
 
         <include
             layout="@layout/layout_feed_author"
-            app:user="@{homeTabData.author}"></include>
+            app:user="@{pagingTabData.author}"></include>
 
         <include
             layout="@layout/layout_feed_text"
             app:lines="@{3}"
-            app:feedText="@{homeTabData.feeds_text}"></include>
+            app:feedText="@{pagingTabData.feeds_text}"></include>
 
 
         <!--   图片区域-->
@@ -43,16 +43,16 @@
 
         <include
             layout="@layout/layout_feed_tag"
-            app:tagText="@{homeTabData.activityText}"></include>
+            app:tagText="@{pagingTabData.activityText}"></include>
 
         <include
             layout="@layout/layout_feed_top_comment"
-            app:comment="@{homeTabData.topComment}"></include>
+            app:comment="@{pagingTabData.topComment}"></include>
 
         <include
             android:id="@+id/interaction_binding"
             layout="@layout/layout_feed_interaction"
             app:lifeCycleOwner="@{lifeCycleOwner}"
-            app:homeTabData="@{homeTabData}"></include>
+            app:pagingTabData="@{pagingTabData}"></include>
     </LinearLayout>
 </layout>

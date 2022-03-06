@@ -1,4 +1,4 @@
-package com.gdlgxy.internshipcommunity.module.home;
+package com.gdlgxy.internshipcommunity.module.basepaging;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -39,7 +39,7 @@ public class InteractionPresenter {
     private static final String URL_TOGGLE_COMMENT_LIKE = "/ugc/toggleCommentLike";
 
     //给一个帖子点赞/取消点赞，它和给帖子点踩一踩是互斥的
-    public static void toggleFeedLike(LifecycleOwner owner, HomeTabData feed) {
+    public static void toggleFeedLike(LifecycleOwner owner, PagingTabData feed) {
         if (!isLogin(owner, new Observer<User>() {
             @Override
             public void onChanged(User user) {
@@ -51,7 +51,7 @@ public class InteractionPresenter {
         }
     }
 
-    private static void toggleFeedLikeInternal(HomeTabData feed) {
+    private static void toggleFeedLikeInternal(PagingTabData feed) {
         ApiService.get(URL_TOGGLE_FEED_LIK)
                 .addParam("userId", UserManager.get().getUserId())
                 .addParam("itemId", feed.itemId)
@@ -74,7 +74,7 @@ public class InteractionPresenter {
     }
 
     //给一个帖子点踩一踩/取消踩一踩,它和给帖子点赞是互斥的
-    public static void toggleFeedDiss(LifecycleOwner owner, HomeTabData feed) {
+    public static void toggleFeedDiss(LifecycleOwner owner, PagingTabData feed) {
         if (!isLogin(owner, new Observer<User>() {
             @Override
             public void onChanged(User user) {
@@ -86,7 +86,7 @@ public class InteractionPresenter {
         }
     }
 
-    private static void toggleFeedDissInternal(HomeTabData feed) {
+    private static void toggleFeedDissInternal(PagingTabData feed) {
         ApiService.get(URL_TOGGLE_FEED_DISS).addParam("userId", UserManager.get().getUserId())
                 .addParam("itemId", feed.itemId)
                 .execute(new JsonCallback<JSONObject>() {
@@ -106,7 +106,7 @@ public class InteractionPresenter {
     }
 
     //打开分享面板
-    public static void openShare(Context context, HomeTabData feed) {
+    public static void openShare(Context context, PagingTabData feed) {
         String url = "http://h5.aliyun.ppjoke.com/item/%s?timestamp=%s&user_id=%s";
 
         String shareContent = feed.feeds_text;
@@ -178,7 +178,7 @@ public class InteractionPresenter {
     }
 
     //收藏/取消收藏一个帖子
-    public static void toggleFeedFavorite(LifecycleOwner owner, HomeTabData feed) {
+    public static void toggleFeedFavorite(LifecycleOwner owner, PagingTabData feed) {
         if (!isLogin(owner, new Observer<User>() {
             @Override
             public void onChanged(User user) {
@@ -190,7 +190,7 @@ public class InteractionPresenter {
         }
     }
 
-    private static void toggleFeedFavorite(HomeTabData feed) {
+    private static void toggleFeedFavorite(PagingTabData feed) {
         ApiService.get("/ugc/toggleFavorite")
                 .addParam("itemId", feed.itemId)
                 .addParam("userId", UserManager.get().getUserId())
@@ -214,7 +214,7 @@ public class InteractionPresenter {
 
 
     //关注/取消关注一个用户
-    public static void toggleFollowUser(LifecycleOwner owner, HomeTabData feed) {
+    public static void toggleFollowUser(LifecycleOwner owner, PagingTabData feed) {
         if (!isLogin(owner, new Observer<User>() {
             @Override
             public void onChanged(User user) {
@@ -226,7 +226,7 @@ public class InteractionPresenter {
         }
     }
 
-    private static void toggleFollowUser(HomeTabData feed) {
+    private static void toggleFollowUser(PagingTabData feed) {
         ApiService.get("/ugc/toggleUserFollow")
                 .addParam("followUserId", UserManager.get().getUserId())
                 .addParam("userId", feed.author.userId)

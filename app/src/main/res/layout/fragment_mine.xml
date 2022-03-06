@@ -172,6 +172,6 @@
 
         <variable
             name="user"
-            type="com.gdlgxy.internshipcommunity.module.home.User" />
+            type="com.gdlgxy.internshipcommunity.module.basepaging.User" />
     </data>
 </layout>

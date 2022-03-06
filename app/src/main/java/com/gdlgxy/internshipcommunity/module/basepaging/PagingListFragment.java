@@ -1,10 +1,9 @@
-package com.gdlgxy.internshipcommunity.module.home;
+package com.gdlgxy.internshipcommunity.module.basepaging;
 
 import android.os.Bundle;
 import android.view.View;
 
 import com.gdlgxy.internshipcommunity.base.BaseListFragment;
-import com.gdlgxy.navannotationmodule.FragmentDestination;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 
 import java.util.List;
@@ -16,8 +15,7 @@ import androidx.paging.ItemKeyedDataSource;
 import androidx.paging.PagedList;
 import androidx.paging.PagedListAdapter;
 
-@FragmentDestination(pageUrl = "main/module/home", asStarter = true)
-public class HomeFragment extends BaseListFragment<HomeTabData, HomeViewModel> {
+public class PagingListFragment extends BaseListFragment<PagingTabData, BasePagingViewModel> {
     private PageListPlayDetector playDetector;
     private String mPageType = "pics";
     private boolean shouldPause = true;
@@ -25,9 +23,9 @@ public class HomeFragment extends BaseListFragment<HomeTabData, HomeViewModel> {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mViewModel.getCacheLiveData().observe(getViewLifecycleOwner(), new Observer<PagedList<HomeTabData>>() {
+        mViewModel.getCacheLiveData().observe(getViewLifecycleOwner(), new Observer<PagedList<PagingTabData>>() {
             @Override
-            public void onChanged(PagedList<HomeTabData> feeds) {
+            public void onChanged(PagedList<PagingTabData> feeds) {
                 submitList(feeds);
             }
         });
@@ -40,10 +38,10 @@ public class HomeFragment extends BaseListFragment<HomeTabData, HomeViewModel> {
         super.onDestroyView();
     }
 
-    public static HomeFragment newInstance(String feedType) {
+    public static PagingListFragment newInstance(String feedType) {
         Bundle args = new Bundle();
         args.putString("pageType", feedType);
-        HomeFragment fragment = new HomeFragment();
+        PagingListFragment fragment = new PagingListFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -65,13 +63,13 @@ public class HomeFragment extends BaseListFragment<HomeTabData, HomeViewModel> {
             }
 
             @Override
-            public void onStartFeedDetailActivity(HomeTabData feed) {
-                boolean isVideo = feed.itemType == HomeTabData.TYPE_VIDEO;
+            public void onStartFeedDetailActivity(PagingTabData feed) {
+                boolean isVideo = feed.itemType == PagingTabData.TYPE_VIDEO;
                 shouldPause = !isVideo;
             }
 
             @Override
-            public void onCurrentListChanged(@Nullable PagedList<HomeTabData> previousList, @Nullable PagedList<HomeTabData> currentList) {
+            public void onCurrentListChanged(@Nullable PagedList<PagingTabData> previousList, @Nullable PagedList<PagingTabData> currentList) {
                 //这个方法是在我们每提交一次 pagelist对象到adapter 就会触发一次
                 //每调用一次 adpater.submitlist
                 if (previousList != null && currentList != null) {
@@ -85,15 +83,15 @@ public class HomeFragment extends BaseListFragment<HomeTabData, HomeViewModel> {
 
     @Override
     public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-        final PagedList<HomeTabData> currentList = mAdapter.getCurrentList();
+        final PagedList<PagingTabData> currentList = mAdapter.getCurrentList();
         if (currentList == null || currentList.size() <= 0) {
             finishRefresh(false);
             return;
         }
-        HomeTabData homeTabData = currentList.get(mAdapter.getItemCount() - 1);
-        mViewModel.loadAfter(homeTabData.id, new ItemKeyedDataSource.LoadCallback<HomeTabData>() {
+        PagingTabData pagingTabData = currentList.get(mAdapter.getItemCount() - 1);
+        mViewModel.loadAfter(pagingTabData.id, new ItemKeyedDataSource.LoadCallback<PagingTabData>() {
             @Override
-            public void onResult(@NonNull List<? extends HomeTabData> data) {
+            public void onResult(@NonNull List<? extends PagingTabData> data) {
                 PagedList.Config config = currentList.getConfig();
                 if (data != null && data.size() > 0) {
                     //这里 咱们手动接管 分页数据加载的时候 使用MutableItemKeyedDataSource也是可以的。

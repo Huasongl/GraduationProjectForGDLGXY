@@ -4,11 +4,10 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.gdlgxy.internshipcommunity.CommunityApplication;
-import com.gdlgxy.internshipcommunity.module.home.User;
+import com.gdlgxy.internshipcommunity.module.basepaging.User;
 import com.gdlgxy.internshipcommunity.network.ApiResponse;
 import com.gdlgxy.internshipcommunity.network.ApiService;
 import com.gdlgxy.internshipcommunity.network.JsonCallback;
@@ -19,6 +18,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 public class UserManager {
+
     private static final String KEY_CACHE_USER = "cache_user";
     private static UserManager mUserManager = new UserManager();
     private MutableLiveData<User> userLiveData;
@@ -53,7 +53,7 @@ public class UserManager {
     }
 
     public boolean isLogin() { //解决登录卡死的问题，expires_time时间戳有问题，会一直小于 System.currentTimeMillis();
-        return mUser != null ;//? false : mUser.expires_time > System.currentTimeMillis();
+        return mUser != null;//? false : mUser.expires_time > System.currentTimeMillis();
     }
 
     public User getUser() {

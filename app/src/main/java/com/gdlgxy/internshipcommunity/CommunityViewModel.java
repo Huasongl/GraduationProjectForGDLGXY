@@ -1,0 +1,1 @@
+package com.gdlgxy.internshipcommunity;import androidx.lifecycle.ViewModel;public class CommunityViewModel extends ViewModel {}

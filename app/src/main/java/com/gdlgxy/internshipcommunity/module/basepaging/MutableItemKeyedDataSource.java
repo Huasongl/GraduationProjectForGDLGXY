@@ -1,4 +1,4 @@
-package com.gdlgxy.internshipcommunity.module.home;
+package com.gdlgxy.internshipcommunity.module.basepaging;
 
 import android.annotation.SuppressLint;
 

@@ -7,13 +7,13 @@
 
         <variable
             name="comment"
-            type="com.gdlgxy.internshipcommunity.module.home.Comment" />
+            type="com.gdlgxy.internshipcommunity.module.basepaging.Comment" />
 
         <variable
             name="lifeCycleOwner"
             type="androidx.lifecycle.LifecycleOwner" />
 
-        <import type="com.gdlgxy.internshipcommunity.module.home.InteractionPresenter" />
+        <import type="com.gdlgxy.internshipcommunity.module.basepaging.InteractionPresenter" />
 
         <import type="android.text.TextUtils"></import>
 

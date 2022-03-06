@@ -1,4 +1,4 @@
-package com.gdlgxy.internshipcommunity.module.home;
+package com.gdlgxy.internshipcommunity.module.basepaging;
 
 import android.text.TextUtils;
 
@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 
-public class HomeTabData extends BaseObservable implements Serializable {
+public class PagingTabData extends BaseObservable implements Serializable {
 
     public static final int TYPE_IMAGE_TEXT = 1;//图文
     public static final int TYPE_VIDEO = 2;//视频
@@ -62,9 +62,9 @@ public class HomeTabData extends BaseObservable implements Serializable {
 
     @Override
     public boolean equals(@Nullable Object obj) {
-        if (obj == null || !(obj instanceof HomeTabData))
+        if (obj == null || !(obj instanceof PagingTabData))
             return false;
-        HomeTabData newTabData = (HomeTabData) obj;
+        PagingTabData newTabData = (PagingTabData) obj;
         return id == newTabData.id
                 && itemId == newTabData.itemId
                 && itemType == newTabData.itemType

@@ -6,7 +6,6 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 
 import com.gdlgxy.internshipcommunity.base.BaseActivity;
-import com.gdlgxy.internshipcommunity.login.LoginViewModel;
 import com.gdlgxy.internshipcommunity.module.mainpageconfig.NavGraphBuilder;
 import com.gdlgxy.internshipcommunity.module.mainpageconfig.view.AppBottomBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,11 +18,11 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.gdlgxy.internshipcommunity.databinding.ActivityMainBinding;
 
-public class MainActivity extends BaseActivity<ActivityMainBinding, LoginViewModel>
+public class CommunityActivity extends BaseActivity<ActivityMainBinding, CommunityViewModel>
         implements BottomNavigationView.OnNavigationItemSelectedListener {
     private NavController mNavController;
     private AppBottomBar mNavView;
-    private static MainActivity sInstance;
+    private static CommunityActivity sInstance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,22 +60,23 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, LoginViewMod
         super.onPause();
     }
 
+
+    @Override
+    public void finish() {
+        super.finish();
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
     }
 
     @Override
-    protected LoginViewModel createViewModel() {
-        return ViewModelProvider.NewInstanceFactory.getInstance().create(LoginViewModel.class);
+    protected CommunityViewModel createViewModel() {
+        return ViewModelProvider.NewInstanceFactory.getInstance().create(CommunityViewModel.class);
     }
 
-//    @Override
-//    protected ViewModel createViewModel() {
-//        return ViewModelProvider.NewInstanceFactory.getInstance().create(ViewModel.class);
-//    }
-
-    public static MainActivity getInstance() {
+    public static CommunityActivity getInstance() {
         return sInstance;
     }
 

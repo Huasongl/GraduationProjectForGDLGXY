@@ -1,0 +1,1 @@
+package com.gdlgxy.internshipcommunity.module.homeimport com.google.gson.annotations.SerializedNamedata class Owner(    @SerializedName("avatar_url") val mage_url: String?)

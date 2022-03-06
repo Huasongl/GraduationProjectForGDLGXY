@@ -10,7 +10,6 @@ import androidx.room.RoomDatabase;
 public abstract class CacheDatabase extends RoomDatabase {
     private static final String NAME = "network_cache";
     private static CacheDatabase sNetworkCacheDatabase;
-
     public static synchronized CacheDatabase getInstance() {
         if (sNetworkCacheDatabase == null) {
             sNetworkCacheDatabase = Room.databaseBuilder(CommunityApplication.getApplication(),
