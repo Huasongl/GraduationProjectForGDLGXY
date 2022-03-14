@@ -20,7 +20,7 @@ import androidx.lifecycle.MutableLiveData;
 public class UserManager {
 
     private static final String KEY_CACHE_USER = "cache_user";
-    private static UserManager mUserManager = new UserManager();
+    private static final UserManager mUserManager = new UserManager();
     private MutableLiveData<User> mUserLiveData;
     private User mUser;
 

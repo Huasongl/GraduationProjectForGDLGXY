@@ -6,6 +6,7 @@ import android.content.res.AssetManager;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.gdlgxy.internshipcommunity.module.community.CommunityTabData;
+import com.gdlgxy.internshipcommunity.module.home.HomeTabData;
 import com.gdlgxy.internshipcommunity.module.mainpageconfig.data.BottomBar;
 
 import java.io.BufferedReader;
@@ -22,6 +23,7 @@ public class AppConfig {
     private static HashMap<String, Destination> sDestConfig;
     private static BottomBar sBottomBar;
     private static CommunityTabData sSofaTab, sFindTabConfig;
+    private static HomeTabData sHomeTabConfig;
     public static HashMap<String, Destination> getDestConfig() {
         if (sDestConfig == null) {
             String content = parseFile("destination.json");
@@ -51,6 +53,20 @@ public class AppConfig {
             });
         }
         return sSofaTab;
+    }
+
+    public static HomeTabData getHomeTabConfig() {
+        if(sHomeTabConfig == null) {
+            String content = parseFile("home_tabs_config.json");
+            sHomeTabConfig = JSON.parseObject(content, HomeTabData.class);
+            Collections.sort(sHomeTabConfig.tabs, new Comparator<HomeTabData.Tabs>() {
+                @Override
+                public int compare(HomeTabData.Tabs o1, HomeTabData.Tabs o2) {
+                    return o1.index < o2.index ? -1 : 1;
+                }
+            });
+        }
+        return sHomeTabConfig;
     }
 
     public static CommunityTabData getFindTabConfig() {
