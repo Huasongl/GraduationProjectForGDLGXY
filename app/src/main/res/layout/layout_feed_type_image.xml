@@ -4,55 +4,67 @@
 
     <data>
 
-        <variable
-            name="pagingTabData"
-            type="PagingTabData" />
+        <import type="com.gdlgxy.internshipcommunity.module.basepaging.PagingTabData" />
 
         <variable
             name="lifeCycleOwner"
             type="androidx.lifecycle.LifecycleOwner" />
 
-        <import type="com.gdlgxy.internshipcommunity.module.basepaging.PagingTabData"></import>
-
+        <variable
+            name="pagingTabData"
+            type="PagingTabData" />
     </data>
 
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color_white"
-        android:orientation="vertical"
-        android:paddingTop="@dimen/dp_10">
+        android:layout_margin="@dimen/dp_5"
+        app:cardCornerRadius="@dimen/dp_5"
+        app:cardElevation="@dimen/dp_5">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_10">
 
         <include
             layout="@layout/layout_feed_author"
-            app:user="@{pagingTabData.author}"></include>
+            app:user="@{pagingTabData.author}"/>
 
         <include
             layout="@layout/layout_feed_text"
             app:lines="@{3}"
-            app:feedText="@{pagingTabData.feeds_text}"></include>
-
+            app:feedText="@{pagingTabData.feeds_text}"/>
 
         <!--   图片区域-->
-        <com.gdlgxy.internshipcommunity.widget.PPImageView
-            android:id="@+id/feed_image"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/dp_10"></com.gdlgxy.internshipcommunity.widget.PPImageView>
+            android:layout_marginHorizontal="@dimen/dp_5"
+            app:cardCornerRadius="@dimen/dp_5">
 
-        <include
-            layout="@layout/layout_feed_tag"
-            app:tagText="@{pagingTabData.activityText}"></include>
+            <ImageView
+                android:id="@+id/fragment_base_type_0_imageview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.card.MaterialCardView>
 
-        <include
-            layout="@layout/layout_feed_top_comment"
-            app:comment="@{pagingTabData.topComment}"></include>
 
-        <include
-            android:id="@+id/interaction_binding"
-            layout="@layout/layout_feed_interaction"
-            app:lifeCycleOwner="@{lifeCycleOwner}"
-            app:pagingTabData="@{pagingTabData}"></include>
-    </LinearLayout>
+            <include
+                layout="@layout/layout_feed_tag"
+                app:tagText="@{pagingTabData.activityText}" />
+
+            <include
+                layout="@layout/layout_feed_top_comment"
+                app:comment="@{pagingTabData.topComment}" />
+
+            <include
+                android:id="@+id/interaction_binding"
+                layout="@layout/layout_feed_interaction"
+                app:lifeCycleOwner="@{lifeCycleOwner}"
+                app:pagingTabData="@{pagingTabData}" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 </layout>

@@ -4,23 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="pagingTabData"
             type="PagingTabData" />
-
         <variable
             name="lifeCycleOwner"
             type="androidx.lifecycle.LifecycleOwner" />
-
-        <import type="com.gdlgxy.internshipcommunity.module.basepaging.PagingTabData"></import>
-
-        <import type="com.gdlgxy.internshipcommunity.util.StringConvert"></import>
-
-        <import type="com.gdlgxy.internshipcommunity.module.basepaging.InteractionPresenter" />
-
-        <import type="android.content.Context" />
-
+        <import
+            type="com.gdlgxy.internshipcommunity.module.basepaging.PagingTabData"/>
+        <import
+            type="com.gdlgxy.internshipcommunity.util.StringConvert"/>
+        <import
+            type="com.gdlgxy.internshipcommunity.module.basepaging.InteractionPresenter" />
+        <import
+            type="android.content.Context" />
     </data>
 
     <LinearLayout
@@ -38,18 +35,18 @@
             android:layout_weight="1"
             android:onClick="@{()->InteractionPresenter.toggleFeedLike(lifeCycleOwner,pagingTabData)}"
             android:text="@{pagingTabData.ugc.likeCount>0?StringConvert.convertFeedUgc(pagingTabData.ugc.likeCount):@string/like}"
-            android:textColor="@{pagingTabData.ugc.hasLiked?@color/color_theme:@color/color_3d3}"
+            android:textColor="@{pagingTabData.ugc.hasLiked?@color/colorPrimaryDark:@color/color_3d3}"
             android:textSize="@dimen/sp_14"
             app:backgroundTint="@color/color_white"
             app:cornerRadius="0dp"
             app:icon="@{pagingTabData.ugc.hasLiked?@drawable/icon_cell_liked:@drawable/icon_cell_like}"
             app:iconGravity="textStart"
             app:iconPadding="4dp"
-            app:iconTint="@{pagingTabData.ugc.hasLiked?@color/color_theme:@color/color_3d3}"
+            app:iconTint="@{pagingTabData.ugc.hasLiked?@color/colorPrimaryDark:@color/color_3d3}"
             tools:icon="@drawable/icon_cell_like"
             tools:iconTint="@color/color_3d3"
             tools:text="1000"
-            tools:textColor="@color/color_3d3"></com.google.android.material.button.MaterialButton>
+            tools:textColor="@color/color_3d3"/>
 
 
         <com.google.android.material.button.MaterialButton
@@ -59,18 +56,18 @@
             android:layout_weight="1"
             android:onClick="@{()->InteractionPresenter.toggleFeedDiss(lifeCycleOwner,pagingTabData)}"
             android:text="踩"
-            android:textColor="@{pagingTabData.ugc.hasdiss?@color/color_theme:@color/color_3d3}"
+            android:textColor="@{pagingTabData.ugc.hasdiss?@color/colorPrimaryDark:@color/color_3d3}"
             android:textSize="@dimen/sp_14"
             app:backgroundTint="@color/color_white"
             app:cornerRadius="0dp"
             app:icon="@{pagingTabData.ugc.hasdiss?@drawable/icon_cell_dissed:@drawable/icon_cell_diss}"
             app:iconGravity="textStart"
             app:iconPadding="4dp"
-            app:iconTint="@{pagingTabData.ugc.hasdiss?@color/color_theme:@color/color_3d3}"
+            app:iconTint="@{pagingTabData.ugc.hasdiss?@color/colorPrimaryDark:@color/color_3d3}"
             tools:icon="@drawable/icon_cell_diss"
             tools:iconTint="@color/color_3d3"
             tools:text="1000"
-            tools:textColor="@color/color_3d3"></com.google.android.material.button.MaterialButton>
+            tools:textColor="@color/color_3d3"/>
 
 
         <com.google.android.material.button.MaterialButton
@@ -90,7 +87,7 @@
             tools:icon="@drawable/icon_cell_comment"
             tools:iconTint="@color/color_3d3"
             tools:text="1000"
-            tools:textColor="@color/color_3d3"></com.google.android.material.button.MaterialButton>
+            tools:textColor="@color/color_3d3"/>
 
 
         <com.google.android.material.button.MaterialButton
@@ -111,7 +108,6 @@
             tools:icon="@drawable/icon_cell_share"
             tools:iconTint="@color/color_3d3"
             tools:text="1000"
-            tools:textColor="@color/color_3d3"></com.google.android.material.button.MaterialButton>
-
+            tools:textColor="@color/color_3d3"/>
     </LinearLayout>
 </layout>

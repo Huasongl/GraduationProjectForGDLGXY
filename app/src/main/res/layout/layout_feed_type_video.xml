@@ -12,7 +12,8 @@
             name="lifeCycleOwner"
             type="androidx.lifecycle.LifecycleOwner" />
 
-        <import type="com.gdlgxy.internshipcommunity.module.basepaging.PagingTabData"></import>
+        <import
+            type="com.gdlgxy.internshipcommunity.module.basepaging.PagingTabData"/>
 
     </data>
 
@@ -26,12 +27,12 @@
 
         <include
             layout="@layout/layout_feed_author"
-            app:user="@{pagingTabData.author}"></include>
+            app:user="@{pagingTabData.author}"/>
 
         <include
             layout="@layout/layout_feed_text"
             app:feedText="@{pagingTabData.feeds_text}"
-            app:lines="@{3}"></include>
+            app:lines="@{3}"/>
 
 
         <!--   视频区域-->
@@ -39,21 +40,21 @@
             android:id="@+id/list_player_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/dp_10"></com.gdlgxy.internshipcommunity.widget.ListPlayerView>
+            android:layout_marginBottom="@dimen/dp_10"/>
 
 
         <include
             layout="@layout/layout_feed_tag"
-            app:tagText="@{pagingTabData.activityText}"></include>
+            app:tagText="@{pagingTabData.activityText}"/>
 
         <include
             layout="@layout/layout_feed_top_comment"
-            app:comment="@{pagingTabData.topComment}"></include>
+            app:comment="@{pagingTabData.topComment}"/>
 
         <include
             android:id="@+id/interaction_binding"
             layout="@layout/layout_feed_interaction"
             app:pagingTabData="@{pagingTabData}"
-            app:lifeCycleOwner="@{lifeCycleOwner}"></include>
+            app:lifeCycleOwner="@{lifeCycleOwner}"/>
     </LinearLayout>
 </layout>

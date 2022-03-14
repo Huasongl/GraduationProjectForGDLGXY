@@ -98,7 +98,6 @@ public class PagingListFragment extends BaseListFragment<PagingTabData, BasePagi
                     //由于当且仅当 paging不再帮我们分页的时候，我们才会接管。所以 就不需要ViewModel中创建的DataSource继续工作了，所以使用
                     //MutablePageKeyedDataSource也是可以的
                     MutablePageKeyedDataSource dataSource = new MutablePageKeyedDataSource();
-
                     //这里要把列表上已经显示的先添加到dataSource.data中
                     //而后把本次分页回来的数据再添加到dataSource.data中
                     dataSource.data.addAll(currentList);

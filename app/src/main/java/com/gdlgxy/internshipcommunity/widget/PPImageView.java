@@ -75,7 +75,6 @@ public class PPImageView extends AppCompatImageView {
         builder.into(view);
     }
 
-
     public void bindData(int widthPx, int heightPx, int marginLeft, String imageUrl) {
         bindData(widthPx, heightPx, marginLeft, PixUtils.getScreenWidth(), PixUtils.getScreenWidth(), imageUrl);
     }
@@ -94,7 +93,6 @@ public class PPImageView extends AppCompatImageView {
                     int height = resource.getIntrinsicHeight();
                     int width = resource.getIntrinsicWidth();
                     setSize(width, height, marginLeft, maxWidth, maxHeight);
-
                     setImageDrawable(resource);
                 }
             });

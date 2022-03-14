@@ -6,12 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.gdlgxy.internshipcommunity.BR;
 import com.gdlgxy.internshipcommunity.R;
 import com.gdlgxy.internshipcommunity.base.BasePagedListAdapter;
 import com.gdlgxy.internshipcommunity.databinding.LayoutFeedTypeImageBinding;
 import com.gdlgxy.internshipcommunity.databinding.LayoutFeedTypeVideoBinding;
 import com.gdlgxy.internshipcommunity.widget.ListPlayerView;
+import com.gdlgxy.internshipcommunity.widget.PPImageView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -97,7 +99,7 @@ public class HomePagedListAdapter extends BasePagedListAdapter<PagingTabData, Ho
 
         public ViewDataBinding mBinding;
         public ListPlayerView listPlayerView;
-        public ImageView feedImage;
+        public ImageView mComprehensiveImage;
 
         public ViewHolder(@NonNull View itemView, ViewDataBinding binding) {
             super(itemView);
@@ -108,13 +110,13 @@ public class HomePagedListAdapter extends BasePagedListAdapter<PagingTabData, Ho
             //这里之所以手动绑定数据的原因是 图片 和视频区域都是需要计算的
             //而dataBinding的执行默认是延迟一帧的。
             //当列表上下滑动的时候 ，会明显的看到宽高尺寸不对称的问题
-
             mBinding.setVariable(BR.pagingTabData, item);
             mBinding.setVariable(BR.lifeCycleOwner, mContext);
             if (mBinding instanceof LayoutFeedTypeImageBinding) {
                 LayoutFeedTypeImageBinding imageBinding = (LayoutFeedTypeImageBinding) mBinding;
-                feedImage = imageBinding.feedImage;
-                imageBinding.feedImage.bindData(item.width, item.height, 16, item.cover);
+                mComprehensiveImage = imageBinding.fragmentBaseType0Imageview;
+                Glide.with(mComprehensiveImage).load(item.cover).into(mComprehensiveImage);
+//                mComprehensiveImage.bindData(item.width, item.height, 16, item.cover);
 //                imageBinding.setFeed(item);
 //                imageBinding.interactionBinding.setLifeCycleOwner((LifecycleOwner) mContext);
             }
