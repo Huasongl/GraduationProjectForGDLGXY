@@ -21,7 +21,7 @@ public class UserManager {
 
     private static final String KEY_CACHE_USER = "cache_user";
     private static UserManager mUserManager = new UserManager();
-    private MutableLiveData<User> userLiveData;
+    private MutableLiveData<User> mUserLiveData;
     private User mUser;
 
     public static UserManager get() {
@@ -61,7 +61,7 @@ public class UserManager {
             return mUser;
         }
         User user = new User();
-        user.avatar = "";
+        user.avatar = "@drawable/icon_user";
         user.description = "************";
         user.name = "未登录";
         return user;
@@ -71,12 +71,10 @@ public class UserManager {
         return isLogin() ? mUser.userId : 0;
     }
 
-
     public LiveData<User> refresh() {
-        MutableLiveData<User> liveData = new MutableLiveData<>();
         if (!isLogin()) {
-            liveData.postValue(getUser());
-            return liveData;
+            getUserLiveData().postValue(getUser());
+            return getUserLiveData();
         }
         ApiService.get("/user/query")
                 .addParam("userId", getUserId())
@@ -84,7 +82,7 @@ public class UserManager {
                     @Override
                     public void onSuccess(ApiResponse<User> response) {
                         save(response.body);
-                        liveData.postValue(getUser());
+                        getUserLiveData().postValue(getUser());
                     }
 
                     @SuppressLint("RestrictedApi")
@@ -96,22 +94,23 @@ public class UserManager {
                                 Toast.makeText(CommunityApplication.getApplication(), response.message, Toast.LENGTH_SHORT).show();
                             }
                         });
-                        liveData.postValue(null);
+                        getUserLiveData().postValue(null);
                     }
                 });
-        return liveData;
+        return getUserLiveData();
     }
 
     public void logout() {
         CacheManager.delete(KEY_CACHE_USER, mUser);
         mUser = null;
-        userLiveData = null;
+        mUserLiveData = null;
+        getUserLiveData().postValue(getUser());
     }
 
     private MutableLiveData<User> getUserLiveData() {
-        if (userLiveData == null) {
-            userLiveData = new MutableLiveData<>();
+        if (mUserLiveData == null) {
+            mUserLiveData = new MutableLiveData<>();
         }
-        return userLiveData;
+        return mUserLiveData;
     }
 }

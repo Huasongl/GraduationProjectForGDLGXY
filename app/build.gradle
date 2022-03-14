@@ -160,4 +160,6 @@ dependencies {
 
     // Lottie
     implementation("com.airbnb.android:lottie:4.2.1")
+
+//    implementation 'com.github.garretyoder:Colorful:2.3.4'
 }

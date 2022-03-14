@@ -2,6 +2,7 @@ package com.gdlgxy.internshipcommunity.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
@@ -33,6 +34,8 @@ public class LoginActivity extends BaseActivity<ActivityLayoutLoginBinding, View
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mView.qqLoginButton.setOnClickListener(this);
+        mView.tvRegister.setOnClickListener(this);
+        mView.btnLogin.setOnClickListener(this);
     }
 
     @Override
@@ -44,7 +47,26 @@ public class LoginActivity extends BaseActivity<ActivityLayoutLoginBinding, View
     public void onClick(View v) {
         if (v.getId() == mView.qqLoginButton.getId()) {
             login();
+        } else if (v.getId() == mView.tvRegister.getId()) {
+            userRegister();
+        } else if(v.getId() == mView.btnLogin.getId()){
+            String username = mView.etUserName.getText().toString().trim();
+            String password = mView.etPsw.getText().toString().trim();
+            if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+                Toast.makeText(LoginActivity.this, "密码或账号不能为空", Toast.LENGTH_SHORT).show();
+            } else {
+                if (mView.activityRegisterCbRemember.isChecked()) {
+                    //保存密码的操作
+                }
+                Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                finish();
+            }
         }
+    }
+
+    private void userRegister(){
+        Intent intent = new Intent(this, RegisterActivity.class);
+        this.startActivity(intent);
     }
 
     private void login() {

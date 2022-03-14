@@ -14,8 +14,12 @@ import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.gdlgxy.internshipcommunity.CommunityApplication;
+import com.gdlgxy.internshipcommunity.R;
 import com.gdlgxy.internshipcommunity.util.PixUtils;
 import com.gdlgxy.internshipcommunity.util.ViewHelper;
+
+import java.io.File;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -50,7 +54,15 @@ public class PPImageView extends AppCompatImageView {
 
     @BindingAdapter(value = {"image_url", "isCircle", "radius"}, requireAll = false)
     public static void setImageUrl(PPImageView view, String imageUrl, boolean isCircle, int radius) {
-        RequestBuilder<Drawable> builder = Glide.with(view).load(imageUrl);
+        RequestBuilder<Drawable> builder;
+        if ("@drawable/icon_user".equals(imageUrl)) {
+            //本地文件
+            Drawable drawable = CommunityApplication.getApplication().getResources().getDrawable(R.drawable.icon_user);
+//            File file = new File(Environment.getExternalStorageDirectory(), "icon_user.png");
+            builder = Glide.with(view).load(drawable);
+        } else {
+            builder = Glide.with(view).load(imageUrl);
+        }
         if (isCircle) {
             builder.transform(new CircleCrop());
         } else if (radius > 0) {
