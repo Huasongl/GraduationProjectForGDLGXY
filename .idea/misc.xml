@@ -19,7 +19,10 @@
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/drawable/selector_btn_mine.xml" value="0.1345" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/drawable/selector_btn_small_video.xml" value="0.1345" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/drawable/selector_icon_back.xml" value="0.1345" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/activity_layout_list.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/activity_layout_login.xml" value="0.2" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/activity_layout_profile.xml" value="0.5464071856287425" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/activity_layout_tag_feed_list.xml" value="0.21197916666666666" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/activity_register.xml" value="0.1625" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/fg_home_container.xml" value="0.19166666666666668" />
@@ -50,18 +53,24 @@
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_feed_tag.xml" value="0.536" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_feed_text.xml" value="0.1421875" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_feed_top_comment.xml" value="0.264" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_feed_type_comment.xml" value="0.18443002780352177" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_feed_type_image.xml" value="0.264" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_feed_type_video.xml" value="0.16" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_player_view.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_profile_tab_comment_interaction.xml" value="0.1" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_refresh_view.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_share_item.xml" value="0.15729166666666666" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_simple_exo_player_controller_view.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_simple_exo_player_view.xml" value="0.1" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_tag_feed_list_header.xml" value="0.264" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/layout_tag_list_item.xml" value="0.1094224924012158" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/list_divider.xml" value="0.17395833333333333" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/list_divider_2px.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/reop_item.xml" value="0.2658514492753623" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/repo_item.xml" value="0.176" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/view_navigation.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/view_prompt.xml" value="0.1" />
+        <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/view_recycler_footer.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/view_recycler_header.xml" value="0.1" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/view_setting_item.xml" value="0.2109375" />
         <entry key="..\:/Users/14363/AndroidStudioProjects/InternshipExchangeCommunity/app/src/main/res/layout/view_tab_indicator.xml" value="0.1390625" />

@@ -62,6 +62,9 @@
                 <data android:scheme="tencent101993725" />
             </intent-filter>
         </activity>
+        <activity android:name=".module.find.TagFeedListActivity"/>
+        <activity android:name=".module.mine.UserBehaviorListActivity"/>
+        <activity android:name=".module.mine.ProfileActivity"/>
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />

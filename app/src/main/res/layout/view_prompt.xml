@@ -35,7 +35,7 @@
         android:background="@drawable/bg_error_action"
         android:gravity="center"
         android:text="@string/action_set_network"
-        android:textColor="#FFEB5F52"
+        android:textColor="@color/colorPrimary"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

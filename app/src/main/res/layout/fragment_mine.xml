@@ -86,6 +86,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/fragment_mine_user_center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -140,36 +141,42 @@
             </androidx.cardview.widget.CardView>
 
             <com.gdlgxy.internshipcommunity.widget.SettingItemView
+                android:id="@+id/fragment_mine_post"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:setting_item_icon="@drawable/ic_profile_my_post"
                 app:setting_item_title="我的帖子" />
 
             <com.gdlgxy.internshipcommunity.widget.SettingItemView
+                android:id="@+id/fragment_mine_comment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:setting_item_icon="@drawable/ic_profile_my_comment"
                 app:setting_item_title="我的评论" />
 
             <com.gdlgxy.internshipcommunity.widget.SettingItemView
+                android:id="@+id/fragment_mine_history"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:setting_item_icon="@drawable/icon_history"
                 app:setting_item_title="@string/setting_item_history" />
 
             <com.gdlgxy.internshipcommunity.widget.SettingItemView
+                android:id="@+id/fragment_mine_collection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:setting_item_icon="@drawable/icon_collection"
                 app:setting_item_title="@string/setting_item_collection" />
 
             <com.gdlgxy.internshipcommunity.widget.SettingItemView
+                android:id="@+id/fragment_mine_subscribe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:setting_item_icon="@drawable/icon_subscribe"
                 app:setting_item_title="@string/setting_item_subscribe" />
 
             <com.gdlgxy.internshipcommunity.widget.SettingItemView
+                android:id="@+id/fragment_mine_setting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:setting_item_icon="@drawable/icon_setting"
