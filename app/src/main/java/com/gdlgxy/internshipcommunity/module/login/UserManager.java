@@ -1,4 +1,4 @@
-package com.gdlgxy.internshipcommunity.login;
+package com.gdlgxy.internshipcommunity.module.login;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import com.gdlgxy.internshipcommunity.CommunityApplication;
-import com.gdlgxy.internshipcommunity.module.basepaging.User;
+import com.gdlgxy.internshipcommunity.data.User;
 import com.gdlgxy.internshipcommunity.network.ApiResponse;
 import com.gdlgxy.internshipcommunity.network.ApiService;
 import com.gdlgxy.internshipcommunity.network.JsonCallback;
@@ -30,7 +30,7 @@ public class UserManager {
 
     private UserManager() {
         User cache = (User) CacheManager.getCache(KEY_CACHE_USER);
-        if (cache != null) { //&& cache.expires_time > System.currentTimeMillis()
+        if (cache != null) {
             mUser = cache;
         }
     }
@@ -62,7 +62,7 @@ public class UserManager {
         }
         User user = new User();
         user.avatar = "@drawable/icon_user";
-        user.description = "************";
+        user.description = "此用户很懒，什么都没有说";
         user.name = "未登录";
         return user;
     }

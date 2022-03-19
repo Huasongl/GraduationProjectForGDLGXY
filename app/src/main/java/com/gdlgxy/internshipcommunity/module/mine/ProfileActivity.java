@@ -6,8 +6,8 @@ import android.os.Bundle;
 
 import com.gdlgxy.internshipcommunity.R;
 import com.gdlgxy.internshipcommunity.databinding.ActivityLayoutProfileBinding;
-import com.gdlgxy.internshipcommunity.login.UserManager;
-import com.gdlgxy.internshipcommunity.module.basepaging.User;
+import com.gdlgxy.internshipcommunity.module.login.UserManager;
+import com.gdlgxy.internshipcommunity.data.User;
 import com.gdlgxy.internshipcommunity.module.find.StatusBar;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;

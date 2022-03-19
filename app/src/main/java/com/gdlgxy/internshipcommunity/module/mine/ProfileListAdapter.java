@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.gdlgxy.internshipcommunity.R;
-import com.gdlgxy.internshipcommunity.login.UserManager;
+import com.gdlgxy.internshipcommunity.module.login.UserManager;
 import com.gdlgxy.internshipcommunity.module.basepaging.HomePagedListAdapter;
 import com.gdlgxy.internshipcommunity.module.basepaging.InteractionPresenter;
 import com.gdlgxy.internshipcommunity.module.basepaging.MutableItemKeyedDataSource;

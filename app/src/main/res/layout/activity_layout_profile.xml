@@ -7,7 +7,7 @@
 
         <variable
             name="user"
-            type="com.gdlgxy.internshipcommunity.module.basepaging.User" />
+            type="com.gdlgxy.internshipcommunity.data.User" />
 
         <variable
             name="expand"

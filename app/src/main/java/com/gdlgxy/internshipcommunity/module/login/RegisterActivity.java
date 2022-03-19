@@ -1,11 +1,9 @@
-package com.gdlgxy.internshipcommunity.login;
+package com.gdlgxy.internshipcommunity.module.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.service.autofill.SaveInfo;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;

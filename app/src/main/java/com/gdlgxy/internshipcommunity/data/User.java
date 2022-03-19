@@ -1,4 +1,4 @@
-package com.gdlgxy.internshipcommunity.module.basepaging;
+package com.gdlgxy.internshipcommunity.data;
 
 import android.text.TextUtils;
 
@@ -53,7 +53,7 @@ public class User extends BaseObservable implements Serializable {
 
     @Override
     public boolean equals(@Nullable Object obj) {
-        if (obj == null || !(obj instanceof User))
+        if (!(obj instanceof User))
             return false;
         User newUser = (User) obj;
         return TextUtils.equals(name, newUser.name)

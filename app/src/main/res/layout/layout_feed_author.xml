@@ -64,10 +64,10 @@
 
     <data>
 
-        <import type="com.gdlgxy.internshipcommunity.module.basepaging.User"></import>
+        <import type="com.gdlgxy.internshipcommunity.data.User"></import>
 
         <variable
             name="user"
-            type="User" />
+            type="com.gdlgxy.internshipcommunity.data.User" />
     </data>
 </layout>

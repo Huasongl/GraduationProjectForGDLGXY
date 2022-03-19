@@ -1,180 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <data>
 
-    <ImageView
-        android:id="@+id/action_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginTop="@dimen/dp_30"
-        android:src="@drawable/icon_close" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp">
-
-        <ImageView
-            android:id="@+id/symbol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/qq"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="35dp"
-            android:text="登录"
-            android:textColor="@color/colorPrimary"
-            android:textSize="24sp" />
-    </LinearLayout>
-    <!--输入框-->
-    <EditText
-        android:id="@+id/et_user_name"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:drawablePadding="@dimen/dp_10"
-        android:hint="账号"
-        android:paddingLeft="10dp"
-        android:textColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary"
-        android:textSize="20sp" />
-    <!--输入框-->
-    <EditText
-        android:id="@+id/et_psw"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:drawablePadding="@dimen/dp_10"
-        android:hint="密码"
-        android:inputType="textPassword"
-        android:paddingLeft="10dp"
-        android:textColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary"
-        android:textSize="20sp" />
-
-        <CheckBox
-            android:checked="true"
-            android:layout_marginStart="@dimen/dp_40"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="记住密码"
-            android:id="@+id/activity_register_cb_remember"
-            android:layout_below="@+id/password"
-            android:layout_marginTop="5dp"/>
-
-        <CheckBox
-            android:checked="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="自动登录"
-            android:id="@+id/activity_register_cb_login"
-            android:layout_below="@+id/activity_register_cb_remember"
-            android:layout_marginStart="@dimen/dp_40"
-            android:layout_marginTop="5dp"/>
-
-    <!--按钮-->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_login"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        app:backgroundTint="@color/colorPrimary"
-        app:cornerRadius="25dp"
-        android:text="登录"
-        android:textColor="@color/white"
-        android:textSize="24sp" />
+    </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        tools:context=".MainActivity">
 
-        <TextView
-            android:id="@+id/tv_register"
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryR">
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
-            android:text="新用户注册"
-            android:textColor="@color/colorPrimary" />
-        <!--layout_weight="1" layout_width="0dp"实现均分效果-->
-        <TextView
-            android:id="@+id/tv_find_psw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="20dp"
-            android:text="忘记密码？"
-            android:textColor="@color/colorPrimary" />
-    </RelativeLayout>
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="30dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gotham"
+                    android:text="社区 "
+                    android:textColor="#ffffff"
+                    android:textSize="32sp" />
 
-            <TextView
-                android:id="@+id/textView_1"
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/qq_login_button"
-                android:layout_centerHorizontal="true"
-                android:text="- 三方登录 -"
-                android:textColor="@color/colorPrimary" />
+                android:orientation="vertical">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/qq_login_button"
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gotham"
+                    android:text="登录"
+                    android:textColor="#ffffff"
+                    android:textSize="32sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/colorSecondaryR" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/calibri"
+            android:gravity="center"
+            android:text="登录后可以发表评论、关注作者等"
+            android:textColor="@color/colorOnPrimaryR"
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="32dp"
+            android:orientation="vertical"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp">
+
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_45"
-                android:layout_above="@+id/textView_2"
+                android:layout_height="wrap_content"
+                android:textColorHint="#96ffffff"
+                android:theme="@style/EditScreenTextInputLayoutStyle">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="16dp"
+                    android:drawableEnd="@drawable/ic_email_white_24dp"
+                    android:fontFamily="@font/calibri"
+                    android:hint="账号"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#96ffffff"
+                android:theme="@style/EditScreenTextInputLayoutStyle">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="16dp"
+                    android:drawableEnd="@drawable/ic_lock_white_24dp"
+                    android:fontFamily="@font/calibri"
+                    android:hint="密码"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
                 android:gravity="center"
-                android:text="QQ登录"
-                android:textColor="@color/color_white"
-                android:textSize="@dimen/sp_16"
-                app:backgroundTint="@color/colorPrimary"
-                app:cornerRadius="25dp" />
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/loginSignInButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_2"
+                    android:fontFamily="@font/calibri"
+                    android:text="进入社区"
+                    app:backgroundTintMode="add"
+                    app:cornerRadius="20dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/colorSecondaryR"
+                    app:backgroundTint="@color/colorPrimaryVariantR"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorOnPrimaryR"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/loginOtherSignIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_2"
+                    android:fontFamily="@font/calibri"
+                    android:text="其他登录"
+                    app:backgroundTintMode="add"
+                    app:cornerRadius="20dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/colorSecondaryR"
+                    app:backgroundTint="@color/colorPrimaryVariantR"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorOnPrimaryR"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/loginSignUpButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_2"
+                    android:fontFamily="@font/calibri"
+                    android:text="立即注册"
+                    app:backgroundTintMode="add"
+                    app:cornerRadius="20dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/colorSecondaryR"
+                    app:backgroundTint="@color/colorPrimaryVariantR"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorOnPrimaryR"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/textView_2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:text="登录即代表阅读并同意服务条款"
-                android:textColor="@color/colorPrimary" />
-        </RelativeLayout>
-    </LinearLayout>
-
-
-    <!--    <ImageView-->
-    <!--        android:layout_width="200dp"-->
-    <!--        android:layout_height="200dp"-->
-    <!--        android:layout_gravity="center"-->
-    <!--        android:layout_marginBottom="@dimen/dp_60"-->
-    <!--        android:src="@mipmap/ic_launcher_round" />-->
-
-
-</LinearLayout>
-
-</FrameLayout>
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/calibri"
+                android:text="忘记密码?"
+                android:textAlignment="center"
+                android:textColor="@color/colorOnPrimaryR"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

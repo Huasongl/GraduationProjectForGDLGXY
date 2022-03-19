@@ -1,0 +1,1 @@
+package com.gdlgxy.internshipcommunity.base;import androidx.lifecycle.ViewModel;public abstract class RBaseViewModel extends ViewModel {}

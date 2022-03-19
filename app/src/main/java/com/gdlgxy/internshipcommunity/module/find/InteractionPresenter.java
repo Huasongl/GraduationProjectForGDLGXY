@@ -8,10 +8,10 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
 import com.gdlgxy.internshipcommunity.CommunityApplication;
-import com.gdlgxy.internshipcommunity.login.UserManager;
+import com.gdlgxy.internshipcommunity.module.login.UserManager;
 import com.gdlgxy.internshipcommunity.module.basepaging.Comment;
 import com.gdlgxy.internshipcommunity.module.basepaging.PagingTabData;
-import com.gdlgxy.internshipcommunity.module.basepaging.User;
+import com.gdlgxy.internshipcommunity.data.User;
 import com.gdlgxy.internshipcommunity.network.ApiResponse;
 import com.gdlgxy.internshipcommunity.network.ApiService;
 import com.gdlgxy.internshipcommunity.network.JsonCallback;

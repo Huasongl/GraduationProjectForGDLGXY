@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 
 import com.gdlgxy.internshipcommunity.base.BaseListFragment;
-import com.gdlgxy.internshipcommunity.manger.PageListPlayManager;
+import com.gdlgxy.internshipcommunity.module.manger.PageListPlayManager;
 import com.gdlgxy.internshipcommunity.module.basepaging.PageListPlayDetector;
 import com.gdlgxy.internshipcommunity.module.basepaging.PagingTabData;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;

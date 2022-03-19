@@ -1,0 +1,1 @@
+package com.gdlgxy.internshipcommunity.repositoryfun main() {    print("A")}

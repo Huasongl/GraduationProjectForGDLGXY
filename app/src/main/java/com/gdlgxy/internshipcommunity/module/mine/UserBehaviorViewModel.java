@@ -2,7 +2,7 @@ package com.gdlgxy.internshipcommunity.module.mine;
 
 import com.alibaba.fastjson.TypeReference;
 import com.gdlgxy.internshipcommunity.base.BaseViewModel;
-import com.gdlgxy.internshipcommunity.login.UserManager;
+import com.gdlgxy.internshipcommunity.module.login.UserManager;
 import com.gdlgxy.internshipcommunity.module.basepaging.PagingTabData;
 import com.gdlgxy.internshipcommunity.network.ApiResponse;
 import com.gdlgxy.internshipcommunity.network.ApiService;

@@ -1,16 +1,15 @@
-package com.gdlgxy.internshipcommunity.login;
+package com.gdlgxy.internshipcommunity.module.login;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
 import com.gdlgxy.internshipcommunity.CommunityApplication;
-import com.gdlgxy.internshipcommunity.base.BaseActivity;
+import com.gdlgxy.internshipcommunity.base.RBaseActivity;
 import com.gdlgxy.internshipcommunity.databinding.ActivityLayoutLoginBinding;
-import com.gdlgxy.internshipcommunity.module.basepaging.User;
+import com.gdlgxy.internshipcommunity.data.User;
 import com.gdlgxy.internshipcommunity.network.ApiResponse;
 import com.gdlgxy.internshipcommunity.network.ApiService;
 import com.gdlgxy.internshipcommunity.network.JsonCallback;
@@ -25,42 +24,31 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import androidx.annotation.Nullable;
-import androidx.lifecycle.ViewModel;
 
-public class LoginActivity extends BaseActivity<ActivityLayoutLoginBinding, ViewModel> implements View.OnClickListener {
+public class LoginActivity extends RBaseActivity<ActivityLayoutLoginBinding, LoginViewModel> implements View.OnClickListener {
     private Tencent mTencent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mView.qqLoginButton.setOnClickListener(this);
-        mView.tvRegister.setOnClickListener(this);
-        mView.btnLogin.setOnClickListener(this);
+        mViewBinding.loginSignInButton.setOnClickListener(this);
+        mViewBinding.loginSignUpButton.setOnClickListener(this);
+        mViewBinding.loginOtherSignIn.setOnClickListener(this);
     }
 
     @Override
-    protected ViewModel createViewModel() {
-        return null;
+    protected ActivityLayoutLoginBinding createViewBinding(LayoutInflater inflater) {
+        return ActivityLayoutLoginBinding.inflate(inflater);
     }
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == mView.qqLoginButton.getId()) {
-            login();
-        } else if (v.getId() == mView.tvRegister.getId()) {
-            userRegister();
-        } else if(v.getId() == mView.btnLogin.getId()){
-            String username = mView.etUserName.getText().toString().trim();
-            String password = mView.etPsw.getText().toString().trim();
-            if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
-                Toast.makeText(LoginActivity.this, "密码或账号不能为空", Toast.LENGTH_SHORT).show();
-            } else {
-                if (mView.activityRegisterCbRemember.isChecked()) {
-                    //保存密码的操作
-                }
-                Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-                finish();
-            }
+        if (v == mViewBinding.loginSignInButton) {
+
+        } else if (v == mViewBinding.loginSignUpButton) {
+
+        } else if (v == mViewBinding.loginOtherSignIn) {
+
         }
     }
 
@@ -174,13 +162,4 @@ public class LoginActivity extends BaseActivity<ActivityLayoutLoginBinding, View
         }
     }
 
-    @Override
-    public String getPageName() {
-        return null;
-    }
-
-    @Override
-    public ActivityLayoutLoginBinding inflate_Activity(LayoutInflater layoutInflater) {
-        return ActivityLayoutLoginBinding.inflate(layoutInflater);
-    }
 }

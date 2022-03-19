@@ -1,4 +1,4 @@
-package com.gdlgxy.internshipcommunity.manger;
+package com.gdlgxy.internshipcommunity.module.manger;
 
 import android.app.Application;
 import android.net.Uri;

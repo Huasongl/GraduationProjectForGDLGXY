@@ -3,9 +3,8 @@ package com.gdlgxy.internshipcommunity.module.find;
 import android.annotation.SuppressLint;
 
 import com.alibaba.fastjson.TypeReference;
-import com.gdlgxy.internshipcommunity.base.AbsViewModel;
 import com.gdlgxy.internshipcommunity.base.BaseViewModel;
-import com.gdlgxy.internshipcommunity.login.UserManager;
+import com.gdlgxy.internshipcommunity.module.login.UserManager;
 import com.gdlgxy.internshipcommunity.network.ApiResponse;
 import com.gdlgxy.internshipcommunity.network.ApiService;
 

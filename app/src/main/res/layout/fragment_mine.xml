@@ -190,6 +190,6 @@
 
         <variable
             name="user"
-            type="com.gdlgxy.internshipcommunity.module.basepaging.User" />
+            type="com.gdlgxy.internshipcommunity.data.User" />
     </data>
 </layout>

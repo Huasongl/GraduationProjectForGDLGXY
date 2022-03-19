@@ -2,6 +2,8 @@ package com.gdlgxy.internshipcommunity.module.basepaging;
 
 import android.text.TextUtils;
 
+import com.gdlgxy.internshipcommunity.data.User;
+
 import java.io.Serializable;
 
 import androidx.annotation.Nullable;

@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.gdlgxy.internshipcommunity.R;
-import com.gdlgxy.internshipcommunity.manger.PageListPlayManager;
+import com.gdlgxy.internshipcommunity.module.manger.PageListPlayManager;
 import com.gdlgxy.internshipcommunity.module.basepaging.IPlayTarget;
 import com.gdlgxy.internshipcommunity.util.PixUtils;
 import com.google.android.exoplayer2.Player;

@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
 
     <color name="colorPrimary">#666666</color>
     <color name="colorPrimaryVariant">#fffafa</color>
     <color name="colorPrimaryDark">#000000</color>
+    
+    <color name="colorPrimaryR">#99CCFF</color>
+    <color name="colorPrimaryDarkR">#88000000</color>
+    <color name="colorPrimaryVariantR">#336699</color>
+    <color name="colorOnPrimaryR">#FFFFFF</color>
+    <color name="colorSecondaryR">#CCFFFF</color>
+    <color name="colorSecondaryVariantR">#99CCCC</color>
+    <color name="surfaceR">#8899CCCC</color>
+    <color name="backgroundR">#88CCFFFF</color>
 
     <color name="colorSecondary">#bfbfbf</color>
     <color name="colorSecondaryVariant">#404040</color>
@@ -35,6 +45,7 @@
     <color name="bg_image">#E7E7E7</color>
 
     <color name="theme_color">#FBC106</color>
+
     <!--分割线黑色3%透明度-->
     <color name="line_color">#08000000</color>
     <color name="black_00_color">#00000000</color>
@@ -79,5 +90,7 @@
     <color name="white_70_color">#B3FFFFFF</color>
     <color name="white_80_color">#CCFFFFFF</color>
     <color name="white_90_color">#E6FFFFFF</color>
+
+    <color name="textInputLayoutR">#96ffffff</color>
 
 </resources>

@@ -28,7 +28,7 @@
         android:theme="@style/Theme.InternshipExchangeCommunity"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name=".login.RegisterActivity"
+            android:name=".module.login.RegisterActivity"
             android:exported="false" />
 
         <uses-library
@@ -45,7 +45,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login.LoginActivity" >
+        <activity android:name=".module.login.LoginActivity" >
         </activity> <!-- 注册SDKActivity -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"

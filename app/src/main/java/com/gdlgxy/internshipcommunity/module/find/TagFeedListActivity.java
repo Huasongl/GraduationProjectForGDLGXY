@@ -7,13 +7,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.gdlgxy.internshipcommunity.AbsPagedListAdapter;
 import com.gdlgxy.internshipcommunity.R;
 import com.gdlgxy.internshipcommunity.base.BasePagedListAdapter;
 import com.gdlgxy.internshipcommunity.base.EmptyView;
 import com.gdlgxy.internshipcommunity.databinding.ActivityLayoutTagFeedListBinding;
 import com.gdlgxy.internshipcommunity.databinding.LayoutTagFeedListHeaderBinding;
-import com.gdlgxy.internshipcommunity.manger.PageListPlayManager;
+import com.gdlgxy.internshipcommunity.module.manger.PageListPlayManager;
 import com.gdlgxy.internshipcommunity.module.basepaging.HomePagedListAdapter;
 import com.gdlgxy.internshipcommunity.module.basepaging.PageListPlayDetector;
 import com.gdlgxy.internshipcommunity.module.basepaging.PagingTabData;
