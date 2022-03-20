@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
 import com.gdlgxy.internshipcommunity.CommunityApplication;
+import com.gdlgxy.internshipcommunity.data.Comment;
 import com.gdlgxy.internshipcommunity.data.User;
 import com.gdlgxy.internshipcommunity.module.login.UserManager;
 import com.gdlgxy.internshipcommunity.network.ApiResponse;

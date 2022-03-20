@@ -2,6 +2,7 @@ package com.gdlgxy.internshipcommunity.module.basepaging;
 
 import android.text.TextUtils;
 
+import com.gdlgxy.internshipcommunity.data.Comment;
 import com.gdlgxy.internshipcommunity.data.User;
 
 import java.io.Serializable;

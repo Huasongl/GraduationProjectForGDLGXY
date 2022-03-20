@@ -1,6 +1,6 @@
-package com.gdlgxy.internshipcommunity.module.basepaging;
+package com.gdlgxy.internshipcommunity.data;
 
-import com.gdlgxy.internshipcommunity.data.User;
+import com.gdlgxy.internshipcommunity.module.basepaging.Ugc;
 
 import java.io.Serializable;
 
@@ -15,15 +15,14 @@ public class Comment extends BaseObservable implements Serializable {
      * itemId : 6739143063064549000
      * commentId : 6739212214408380000
      * userId : 65200808093
-     * commentType : 1
-     * createTime : 1569095152
-     * commentCount : 4454
-     * likeCount : 152
+     * createTime : 1569095152 //时间
+     * commentCount : 4454 //评论数
+     * likeCount : 152 //点赞数
      * commentText : 看见没。比甜蜜暴击好看一万倍！
-     * imageUrl : null
-     * videoUrl : null
-     * width : 0
-     * height : 0
+     * imageUrl : null //图片
+     * videoUrl : null //视频
+     * width : 0  //宽度
+     * height : 0  //
      * hasLiked : false
      * author : {"id":978,"userId":65200808093,"name":"带鱼裹上面包糠","avatar":"","description":null,"likeCount":0,"topCommentCount":0,"followCount":0,"followerCount":0,"qqOpenId":null,"expires_time":0,"score":0,"historyCount":0,"commentCount":0,"favoriteCount":0,"feedCount":0,"hasFollow":false}
      * ugc : {"likeCount":153,"shareCount":0,"commentCount":4454,"hasFavorite":false,"hasLiked":true}

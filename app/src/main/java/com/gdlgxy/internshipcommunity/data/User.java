@@ -10,28 +10,28 @@ import java.io.Serializable;
 import androidx.annotation.Nullable;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
-
 public class User extends BaseObservable implements Serializable {
 
     /**
      * id : 962
      * userId : 3223400206308231
      * name : 二师弟请随我来
-     * avatar :
-     * description :
-     * likeCount : 0
-     * topCommentCount : 0
-     * followCount : 0
-     * followerCount : 0
-     * qqOpenId : null
-     * expires_time : 0
-     * score : 0
-     * historyCount : 0
-     * commentCount : 0
-     * favoriteCount : 0
-     * feedCount : 0
-     * hasFollow : false
+     * avatar : 头像
+     * description : 个人描述
+     * likeCount : 0 关注数
+     * qqOpenId : null //请求Id
+     * 手机号
+     * 账号
+     * QQ号
+     * 动态帖子ID
+     * 生日
+     * 注册的时间
+     * 关注用户的列表，存用户id 1-M //关联用户数据
+     * 粉丝用户列表  N-1 //
+     * expires_time : 0 // 登录的有效期
+     * id islike fanid
      */
+
 
     public int id;
     public long userId;

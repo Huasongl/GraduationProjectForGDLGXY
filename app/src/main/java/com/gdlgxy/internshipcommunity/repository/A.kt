@@ -1,1 +1,1 @@
-package com.gdlgxy.internshipcommunity.repositoryfun main() {    print("A")}
+package com.gdlgxy.internshipcommunity.repositoryimport kotlinx.coroutines.GlobalScopeimport kotlinx.coroutines.launchfun main() {    print("A")    GlobalScope.launch {        println("codes run in coroutine scope")    }}
